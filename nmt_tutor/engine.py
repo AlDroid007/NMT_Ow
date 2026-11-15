@@ -230,6 +230,63 @@ def build_session_plan(selected_subjects, length_mode="quick", custom_bank=None)
     ]
 
 
+_GEN_SECTIONS = {}
+
+
+def _generator_section(key):
+    """Section of a generator's tasks (generators always produce the same section)."""
+    if key not in _GEN_SECTIONS:
+        fn = get_generator(key)
+        _GEN_SECTIONS[key] = fn().get("section") if fn else None
+    return _GEN_SECTIONS[key]
+
+
+def subject_sections(subject_id, custom_bank=None):
+    """All section names that have tasks for the subject (bank, custom bank, generators)."""
+    found = []
+    pools = list(get_bank().get(subject_id, [])) + list((custom_bank or {}).get(subject_id, []))
+    for q in pools:
+        sec = q.get("section")
+        if sec and sec not in found:
+            found.append(sec)
+    for key in generators_for_subject(subject_id):
+        sec = _generator_section(key)
+        if sec and sec not in found:
+            found.append(sec)
+    return found
+
+
+def generate_section_test(subject_id, section, n=8, custom_bank=None):
+    """Up to n tasks of one section: bank and custom tasks first, generators fill the rest."""
+    pool = [dict(q) for q in list((custom_bank or {}).get(subject_id, [])) + list(get_bank().get(subject_id, []))
+            if q.get("section", "Загальне") == section]
+    random.shuffle(pool)
+    questions = []
+    seen = set()
+    for q in pool:
+        if len(questions) >= n:
+            break
+        if q.get("prompt") not in seen:
+            seen.add(q.get("prompt"))
+            questions.append(q)
+    gens = [k for k in generators_for_subject(subject_id) if _generator_section(k) == section]
+    attempts = 0
+    while gens and len(questions) < n and attempts < n * 8:
+        attempts += 1
+        cand = get_generator(gens[attempts % len(gens)])()
+        if cand["prompt"] not in seen or attempts > n * 4:
+            seen.add(cand["prompt"])
+            cand["id"] = f"{subject_id}_focus_{len(questions) + 1}_{random.randint(100, 999)}"
+            questions.append(cand)
+    return questions
+
+
+def build_section_plan(subject_id, section, n=8, custom_bank=None):
+    """Session plan that practises one weak topic; empty if the topic has no tasks."""
+    qs = generate_section_test(subject_id, section, n=n, custom_bank=custom_bank)
+    return [new_block(subject_id, qs)] if qs else []
+
+
 def build_mistake_drill_plan(plan):
     """One identical example for every mistake of the finished session."""
     drill_plan = []
@@ -275,15 +332,20 @@ def compute_subject_summary(block):
     }
 
 
-def build_session_result(plan, length_mode, tutor_mode, mistake_drill=False):
+def build_session_result(plan, length_mode, tutor_mode, mistake_drill=False, focus_section=None, report_id=None):
     """Serializable record of a finished session (what storage keeps as progress)."""
-    return {
+    result = {
         "finished_at": datetime.now().isoformat(timespec="seconds"),
         "length_mode": length_mode,
         "tutor_mode": bool(tutor_mode),
         "mistake_drill": bool(mistake_drill),
         "subjects": [compute_subject_summary(block) for block in plan],
     }
+    if focus_section:
+        result["focus_section"] = focus_section
+    if report_id is not None:
+        result["report_id"] = report_id
+    return result
 
 
 def format_results_report(plan):

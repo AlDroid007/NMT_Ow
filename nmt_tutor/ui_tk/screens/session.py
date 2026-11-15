@@ -27,6 +27,7 @@ class SessionScreenMixin:
         self.current_block_idx = 0
         self.current_q_idx = 0
         self.is_mistake_drill = False
+        self.focus_section = None
         self.timer_seconds = len(selected) * 60 * 60
         self._build_test_view()
         self._load_current_question()
@@ -353,7 +354,33 @@ class SessionScreenMixin:
         for w in self.chat_stack.winfo_children():
             w.destroy()
 
+    def _capture_pending_answer(self):
+        """Counts an answer that was chosen but not checked with «Перевірити».
+
+        The student can leave a task with «Далі →», a subject tab or «Завершити тест»;
+        the chosen answer is then scored quietly (no tutor explanation) instead of being lost.
+        """
+        if not self.plan:
+            return
+        block = self.plan[self.current_block_idx]
+        idx = self.current_q_idx
+        getter = getattr(self, "active_answer_getter", None)
+        if idx in block["answers"] or getter is None:
+            return
+        try:
+            u_ans = getter()
+        except Exception:  # widgets already destroyed
+            return
+        if is_empty_answer(u_ans):
+            return
+        ok, pts, _, _ = evaluate_answer(block["questions"][idx], u_ans)
+        block["answers"][idx] = u_ans
+        block["points"][idx] = pts
+        if not ok and idx not in block["mistakes"]:
+            block["mistakes"].append(idx)
+
     def _switch_block(self, b_idx):
+        self._capture_pending_answer()
         self.current_block_idx = b_idx
         self.current_q_idx = 0
         self._load_current_question()
@@ -593,6 +620,7 @@ class SessionScreenMixin:
         self._show_new_drill(source_q)
 
     def _next_question(self):
+        self._capture_pending_answer()
         block = self.plan[self.current_block_idx]
         if self.current_q_idx + 1 < len(block["questions"]):
             self.current_q_idx += 1
