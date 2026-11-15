@@ -8,8 +8,10 @@ from ...banks import CUSTOM_BANK_TEMPLATE, bank_task_count, merge_banks
 from ...config import SUBJECTS_CONFIG, SUBJECTS_ORDER
 from ...data import bank_size
 from ...generators import generator_count
+from ...profiles import DEFAULT_SUBJECTS, avatar_text, short_name
 from ...storage import files, paths
 from ..owl import OwlMascot
+from ..profile_widgets import emoji_font
 from ..scroll import SmoothScrollView
 from ..theme import IS_WIN, PALETTE, os_label
 from ..widgets import RoundedButton, RoundedCard, SubjectTile
@@ -20,14 +22,16 @@ class SetupScreenMixin:
     # 1. ЕКРАН ВИБОРУ ПРЕДМЕТІВ І НАЛАШТУВАНЬ
     # -------------------------------------------------------------------
     def show_setup(self):
+        if self.profile is None:
+            self.start_profiles()
+            return
         self._clear_main()
 
         header = tk.Frame(self.main_container, bg=PALETTE["nav"], height=74)
         header.pack(fill="x")
         header.pack_propagate(False)
 
-        title_wrap = tk.Frame(header, bg=PALETTE["nav"])
-        title_wrap.pack(side="left", padx=24, pady=10)
+        title_wrap = tk.Frame(header, bg=PALETTE["nav"])  # packed after the buttons so a narrow window clips the title, not them
         tk.Label(
             title_wrap,
             text="НМТ Тренажер • Репетитор Сова-Ліза (2022–2026)",
@@ -45,6 +49,19 @@ class SetupScreenMixin:
 
         RoundedButton(
             header,
+            text=f"{avatar_text(self.profile)} {short_name(self.profile['name'], 14)}",
+            command=self.show_cabinet,
+            bg=PALETTE["primary"],
+            hover_bg=PALETTE["primary_hover"],
+            fg="#FFFFFF",
+            font=emoji_font(self.fonts, 11),
+            radius=14,
+            height=36,
+            min_width=110,
+            parent_bg=PALETTE["nav"],
+        ).pack(side="right", padx=(0, 22), pady=18)
+        RoundedButton(
+            header,
             text="📘 Програми та шкала 100–200",
             command=self._show_reference_dialog,
             bg=PALETTE["nav_accent"],
@@ -56,7 +73,8 @@ class SetupScreenMixin:
             height=36,
             min_width=230,
             parent_bg=PALETTE["nav"],
-        ).pack(side="right", padx=22, pady=18)
+        ).pack(side="right", padx=(0, 10), pady=18)
+        title_wrap.pack(side="left", padx=24, pady=10)
 
         body = tk.Frame(self.main_container, bg=PALETTE["bg"])
         body.pack(fill="both", expand=True, padx=20, pady=14)
@@ -131,7 +149,7 @@ class SetupScreenMixin:
         grid_wrap.columnconfigure(1, weight=1)
 
         self.subj_vars = {}
-        default_sel = {"ukrmova", "math", "history", "english"}
+        default_sel = set(self.profile.get("subjects") or DEFAULT_SUBJECTS)
         for idx, sid in enumerate(SUBJECTS_ORDER):
             cfg = SUBJECTS_CONFIG[sid]
             var = tk.BooleanVar(value=(sid in default_sel))

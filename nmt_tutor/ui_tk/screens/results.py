@@ -17,9 +17,10 @@ class ResultsScreenMixin:
     # 3. ЕКРАН РЕЗУЛЬТАТІВ ТА ОЦІНКИ 100–200
     # -------------------------------------------------------------------
     def _finish_session(self):
+        self._capture_pending_answer()
         self._clear_main()
         self._last_report_text = format_results_report(self.plan)
-        self._record_session()
+        recorded = self._record_session()
 
         header = tk.Frame(self.main_container, bg=PALETTE["nav"], height=70)
         header.pack(fill="x")
@@ -43,6 +44,16 @@ class ResultsScreenMixin:
         )
         tk.Label(top_owl_card.inner, text="Підсумок від Сови-Лізи 🦉", font=self.fonts["h3"], bg=PALETTE["soft_indigo"], fg="#1E2B58").pack(anchor="w", pady=(8, 2))
         tk.Label(top_owl_card.inner, text=res_msg, font=self.fonts["body"], bg=PALETTE["soft_indigo"], fg="#334155", wraplength=780, justify="left").pack(anchor="w")
+        if recorded is False:
+            tk.Label(
+                wrap,
+                text="Ти не відповів(ла) на жодне завдання, тому це тренування не збережено в кабінеті.",
+                font=self.fonts["bold_sm"],
+                bg=PALETTE["soft_amber"],
+                fg="#92400E",
+                padx=12,
+                pady=6,
+            ).pack(fill="x", pady=(0, 10))
 
         rep_card = RoundedCard(wrap, bg=PALETTE["card"], border=PALETTE["border"], parent_bg=PALETTE["bg"], radius=20, pad=16)
         rep_card.pack(fill="both", expand=True)
@@ -83,6 +94,20 @@ class ResultsScreenMixin:
         ).pack(side="left", padx=(0, 10))
         RoundedButton(
             actions,
+            text="👤 Мій кабінет",
+            command=self.show_cabinet,
+            bg=PALETTE["card"],
+            hover_bg=PALETTE["soft_indigo"],
+            fg=PALETTE["text"],
+            border_color=PALETTE["border"],
+            font=self.fonts["bold_sm"],
+            radius=16,
+            height=40,
+            min_width=150,
+            parent_bg=PALETTE["bg"],
+        ).pack(side="right", padx=(10, 0))
+        RoundedButton(
+            actions,
             text="🏠 Обрати інші предмети",
             command=self.show_setup,
             bg=PALETTE["card"],
@@ -97,24 +122,31 @@ class ResultsScreenMixin:
         ).pack(side="right")
 
     def _record_session(self):
-        """Stores the finished session and its report in the encrypted user data store (once per plan)."""
+        """Stores the finished session and its report in the active profile (once per plan).
+
+        Returns True when stored (or already stored), False when there was nothing to store.
+        """
         if getattr(self, "_recorded_plan", None) is self.plan:
-            return
+            return True
         if not any(block["answers"] for block in self.plan):
-            return  # finished without answering anything: nothing to remember
+            return False  # finished without answering anything: nothing to remember
         self._recorded_plan = self.plan
         try:
-            result = build_session_result(self.plan, self.length_mode, self.tutor_mode, self.is_mistake_drill)
+            report_id = self.repo.save_report(self._last_report_text, title=f"nmt_report_{datetime.now().strftime('%Y%m%d_%H%M')}")
+            result = build_session_result(self.plan, self.length_mode, self.tutor_mode, self.is_mistake_drill,
+                                          focus_section=getattr(self, "focus_section", None), report_id=report_id)
             self.repo.save_result(result)
-            self.repo.save_report(self._last_report_text, title=f"nmt_report_{datetime.now().strftime('%Y%m%d_%H%M')}")
         except Exception as exc:
             print(f"Could not save the session result: {exc}", file=sys.stderr)
+            messagebox.showerror("Результат не збережено", f"Не вдалося зберегти результат тренування:\n{exc}")
+        return True
 
     def _start_mistake_drill_session(self):
         drill_plan = build_mistake_drill_plan(self.plan)
         if drill_plan:
             self.tutor_mode = True
             self.is_mistake_drill = True
+            self.focus_section = None
             self.plan = drill_plan
             self.current_block_idx = 0
             self.current_q_idx = 0

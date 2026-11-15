@@ -5,6 +5,8 @@ The associated data (AAD) binds a blob to its table, so blobs cannot be swapped
 between tables without failing authentication.
 """
 
+import hashlib
+import hmac
 import json
 import os
 
@@ -47,6 +49,11 @@ class Cipher:
         if not isinstance(key, (bytes, bytearray)) or len(key) != KEY_SIZE:
             raise ValueError("Encryption key must be 32 bytes.")
         self._aes = _aesgcm()(bytes(key))
+        self._lookup_key = hashlib.sha256(b"nmt-tutor-lookup-v1" + bytes(key)).digest()
+
+    def lookup_hash(self, text):
+        """Keyed hash for finding records by a secret value without storing it (e.g. a sign-in id)."""
+        return hmac.new(self._lookup_key, text.encode("utf-8"), hashlib.sha256).hexdigest()
 
     def encrypt(self, plaintext, aad):
         nonce = os.urandom(NONCE_SIZE)

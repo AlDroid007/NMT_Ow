@@ -9,7 +9,9 @@ from .. import APP_TITLE, APP_VERSION
 from ..data import bank_size
 from ..generators import generator_count
 from ..resources import app_file, launcher_path, is_frozen
+from .screens.cabinet import CabinetScreenMixin
 from .screens.drill import DrillMixin
+from .screens.profiles import ProfilesScreenMixin
 from .screens.results import ResultsScreenMixin
 from .screens.session import SessionScreenMixin
 from .screens.setup import SetupScreenMixin
@@ -17,10 +19,13 @@ from .scroll import SmoothScrollView
 from .theme import IS_MAC, IS_WIN, PALETTE, os_label, pick_fonts
 
 
-class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScreenMixin):
-    def __init__(self, root, repo):
+class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScreenMixin):
+    def __init__(self, root, store):
         self.root = root
-        self.repo = repo
+        # Whole user data store; `self.repo` is the active profile's view of it (None on the picker).
+        self.store = store
+        self.repo = None
+        self.profile = None
         self.root.title(APP_TITLE)
 
         try:
@@ -42,7 +47,8 @@ class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScree
         self._setup_menus()
         SmoothScrollView.install_global_wheel(self.root)
 
-        self.custom_bank = self._load_custom_banks()
+        self.custom_bank = {}
+        self.focus_section = None
         self.plan = []
         self.current_block_idx = 0
         self.current_q_idx = 0
@@ -66,12 +72,14 @@ class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScree
         self.main_container = tk.Frame(self.root, bg=PALETTE["bg"])
         self.main_container.pack(fill="both", expand=True)
 
-        self.show_setup()
-        for notice in getattr(self.repo, "startup_notices", ()) or ():
+        self.start_profiles()
+        for notice in getattr(self.store, "startup_notices", ()) or ():
             self.root.after(300, lambda n=notice: messagebox.showwarning("Дані користувача", n))
 
     # --- storage helpers ---------------------------------------------------
     def _load_custom_banks(self):
+        if self.repo is None:
+            return {}
         try:
             return self.repo.load_custom_banks()
         except Exception as exc:
@@ -96,40 +104,66 @@ class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScree
                 pass
 
     def _setup_menus(self):
+        """Builds the menu bar for the current state: training menus only while a profile is active."""
         try:
             accel_o = "⌘O" if IS_MAC else "Ctrl+O"
             accel_q = "⌘Q" if IS_MAC else "Ctrl+Q"
+            active = self.profile is not None
 
             menubar = tk.Menu(self.root)
             file_menu = tk.Menu(menubar, tearoff=0)
-            file_menu.add_command(label="Додати свій банк (.json)…", accelerator=accel_o, command=self._on_load_json)
-            file_menu.add_command(label="Зберегти шаблон (.json)…", command=self._on_export_template)
+            if active:
+                file_menu.add_command(label="Додати свій банк (.json)…", accelerator=accel_o, command=self._on_load_json)
+                file_menu.add_command(label="Зберегти шаблон (.json)…", command=self._on_export_template)
             if IS_WIN:
                 file_menu.add_command(label="Створити ярлик на Робочому столі", command=self._create_windows_shortcut)
-            file_menu.add_separator()
+            if active or IS_WIN:
+                file_menu.add_separator()
             file_menu.add_command(label="Вийти з програми", accelerator=accel_q, command=self._quit_app)
             menubar.add_cascade(label="Файл", menu=file_menu)
 
-            nav_menu = tk.Menu(menubar, tearoff=0)
-            nav_menu.add_command(label="Вибір предметів", command=self.show_setup)
-            nav_menu.add_command(label="Програми НМТ та шкала 100–200", command=self._show_reference_dialog)
-            menubar.add_cascade(label="Навігація", menu=nav_menu)
+            if active:
+                profile_menu = tk.Menu(menubar, tearoff=0)
+                profile_menu.add_command(label="Особистий кабінет", command=self.show_cabinet)
+                profile_menu.add_command(label="Редагувати профіль…", command=lambda: self.show_profile_form(self.profile))
+                profile_menu.add_separator()
+                profile_menu.add_command(label="Змінити профіль", command=self.switch_profile)
+                menubar.add_cascade(label="Профіль", menu=profile_menu)
+
+                nav_menu = tk.Menu(menubar, tearoff=0)
+                nav_menu.add_command(label="Вибір предметів", command=self.show_setup)
+                nav_menu.add_command(label="Програми НМТ та шкала 100–200", command=self._show_reference_dialog)
+                menubar.add_cascade(label="Навігація", menu=nav_menu)
 
             help_menu = tk.Menu(menubar, tearoff=0)
             help_menu.add_command(label="Про програму «НМТ Сова-Репетитор»", command=self._show_about_dialog)
             menubar.add_cascade(label="Довідка", menu=help_menu)
 
+            old = getattr(self, "_menubar", None)
             self.root.config(menu=menubar)
-            if IS_MAC:
-                self.root.bind_all("<Command-q>", lambda _e: self._quit_app())
-                self.root.bind_all("<Command-o>", lambda _e: self._on_load_json())
-                self.root.createcommand("tk::mac::Quit", self._quit_app)
-                self.root.createcommand("tk::mac::ShowHelp", self._show_about_dialog)
-            else:
-                self.root.bind_all("<Control-q>", lambda _e: self._quit_app())
-                self.root.bind_all("<Control-o>", lambda _e: self._on_load_json())
+            self._menubar = menubar
+            if old is not None:
+                try:
+                    old.destroy()
+                except Exception:
+                    pass
+            if not getattr(self, "_menu_keys_bound", False):
+                self._menu_keys_bound = True
+                if IS_MAC:
+                    self.root.bind_all("<Command-q>", lambda _e: self._quit_app())
+                    self.root.bind_all("<Command-o>", lambda _e: self._load_json_if_active())
+                    self.root.createcommand("tk::mac::Quit", self._quit_app)
+                    self.root.createcommand("tk::mac::ShowHelp", self._show_about_dialog)
+                else:
+                    self.root.bind_all("<Control-q>", lambda _e: self._quit_app())
+                    self.root.bind_all("<Control-o>", lambda _e: self._load_json_if_active())
         except Exception:
             pass
+
+    def _load_json_if_active(self):
+        """⌘O / Ctrl+O: only with an active profile (banks belong to a profile)."""
+        if self.profile is not None:
+            self._on_load_json()
 
     def _create_windows_shortcut(self):
         if not IS_WIN:
@@ -169,7 +203,7 @@ class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScree
     def _quit_app(self):
         self._stop_timer()
         try:
-            self.repo.close()
+            self.store.close()
         except Exception:
             pass
         try:
@@ -185,6 +219,7 @@ class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScree
             f"• Вбудовано {bank_size()} завдань та {generator_count()} генераторів\n"
             "• Багаторівневі підказки Сови-Лізи (рівні 1–10)\n"
             "• Плавна анімована прокрутка та адаптація під екран\n"
+            "• Профілі учнів з цілями, особистий кабінет і PIN-код\n"
             "• Результати, звіти та власні банки зберігаються зашифровано в Документи/NMT_Tutor"
         )
 

@@ -1,4 +1,4 @@
-"""Headless self-test of the core and the encrypted storage (no windows).
+"""Headless self-test of the core, the encrypted storage and profiles (no windows).
 
 Used by tests/smoke_test.py, by CI and by packaged builds: `nmt_tutor_mac.py --selftest [--out FILE]`.
 """
@@ -77,6 +77,52 @@ def _check_storage(result, keystore):
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def _check_profiles(result, keystore):
+    """Profiles in the encrypted store: data split per profile, sign-in lookup, PIN, cabinet numbers."""
+    from . import storage
+    from .auth.local import PinGuard, hash_pin
+    from .cabinet import history, progress_series, subject_stats, weak_topics
+    from .profiles import link_identity, new_profile
+    from .storage import paths
+
+    old_override = paths._override
+    tmp = tempfile.mkdtemp(prefix="nmt_selftest_")
+    try:
+        repo = storage.open_repository(tmp, keystore=keystore, import_legacy=False)
+        repo.save_result(result)  # data from before profiles
+        a = new_profile("Selftest A", subjects=["math"], targets={"math": 180}, exam_date="20.05.2027")
+        a["pin"] = hash_pin("2468")
+        link_identity(a, "google", "selftest-sub-1")
+        repo.save_profile(a)
+        assert repo.assign_unassigned(a["id"]) == 1
+        b = new_profile("Selftest B")
+        repo.save_profile(b)
+        repo.for_profile(b["id"]).save_report("only b", "b")
+        repo.close()
+        repo = storage.open_repository(tmp, keystore=keystore, import_legacy=False)
+        sa, sb = repo.for_profile(a["id"]), repo.for_profile(b["id"])
+        assert len(sa.list_results()) == 1 and sb.list_results() == []
+        assert sa.list_reports() == [] and len(sb.list_reports()) == 1
+        assert repo.find_profile_by_identity("google", "selftest-sub-1")["id"] == a["id"]
+        assert PinGuard().check(repo.get_profile(a["id"]), "2468")[0]
+        assert not PinGuard().check(repo.get_profile(a["id"]), "1111")[0]
+        results = sa.list_results()
+        for sid in [s["subject"] for s in result["subjects"]]:
+            subject_stats(results, sid, a)
+            progress_series(results, sid)
+        weak_topics(results)
+        assert history(results)[0]["subjects"]
+        repo.delete_profile(b["id"])
+        assert [p["id"] for p in repo.list_profiles()] == [a["id"]]
+        repo.close()
+        with open(paths.db_path(), "rb") as f:
+            raw = f.read()
+        assert b"Selftest A" not in raw and b"selftest-sub-1" not in raw, "profile data stored in clear text"
+    finally:
+        paths.set_data_dir(old_override)
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def run_selftest(keystore=None):
     """Returns (ok, lines). keystore=None uses an in-memory key (never touches the OS key store)."""
     from .storage.keystore import MemoryKeyStore
@@ -84,7 +130,13 @@ def run_selftest(keystore=None):
     lines = []
     ok = True
     result = None
-    for name, fn in (("core", lambda: _check_core()), ("storage", lambda: _check_storage(result, keystore or MemoryKeyStore()))):
+    ks = keystore or MemoryKeyStore()
+    checks = (
+        ("core", lambda: _check_core()),
+        ("storage", lambda: _check_storage(result, ks)),
+        ("profiles", lambda: _check_profiles(result, ks)),
+    )
+    for name, fn in checks:
         try:
             out = fn()
             if name == "core":
