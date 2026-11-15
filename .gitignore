@@ -46,3 +46,6 @@ ENV/
 *.sqlite3
 *.db
 *.zip
+
+# PyInstaller spec of the Windows build is tracked
+!packaging/*.spec

@@ -8,7 +8,7 @@ from tkinter import messagebox, ttk
 from .. import APP_TITLE, APP_VERSION
 from ..data import bank_size
 from ..generators import generator_count
-from ..resources import app_file, launcher_path
+from ..resources import app_file, launcher_path, is_frozen
 from .screens.drill import DrillMixin
 from .screens.results import ResultsScreenMixin
 from .screens.session import SessionScreenMixin
@@ -136,19 +136,27 @@ class NmtTutorApp(SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScree
             return
         try:
             import subprocess
-            target_py = launcher_path()
-            app_dir = os.path.dirname(target_py)
-            ico_path = app_file("owl_icon.ico")
-            pyw_exe = os.path.join(os.path.dirname(sys.executable), "pythonw.exe")
-            if not os.path.exists(pyw_exe):
+            if is_frozen():
+                # Packaged build: the exe itself is the target and carries the icon.
                 pyw_exe = sys.executable
+                target_args = ""
+                app_dir = os.path.dirname(sys.executable)
+                ico_path = sys.executable
+            else:
+                target_py = launcher_path()
+                target_args = f'"{target_py}"'
+                app_dir = os.path.dirname(target_py)
+                ico_path = app_file("owl_icon.ico")
+                pyw_exe = os.path.join(os.path.dirname(sys.executable), "pythonw.exe")
+                if not os.path.exists(pyw_exe):
+                    pyw_exe = sys.executable
             desktop = os.path.join(os.path.expanduser("~"), "Desktop")
             lnk_path = os.path.join(desktop, "НМТ Сова-Репетитор.lnk")
             ps = (
                 "$ws = New-Object -ComObject WScript.Shell; "
                 f"$s = $ws.CreateShortcut('{lnk_path}'); "
                 f"$s.TargetPath = '{pyw_exe}'; "
-                f"$s.Arguments = '\"{target_py}\"'; "
+                f"$s.Arguments = '{target_args}'; "
                 f"$s.WorkingDirectory = '{app_dir}'; "
                 + (f"$s.IconLocation = '{ico_path}'; " if os.path.exists(ico_path) else "")
                 + "$s.Save()"

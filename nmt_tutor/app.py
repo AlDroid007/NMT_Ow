@@ -66,6 +66,10 @@ def _ask_without_storage(messagebox):
 
 def main(argv=None):
     argv = sys.argv if argv is None else argv
+    if "--selftest" in argv:
+        from .selftest import main as selftest_main
+
+        sys.exit(selftest_main(argv))
     if "--cli" in argv:
         run_cli()
         return
@@ -91,5 +95,8 @@ def main(argv=None):
         NmtTutorApp(root, repo)
         root.mainloop()
     except Exception as exc:
+        if sys.stdin is None:
+            # Windowed packaged build has no console to fall back to; let the bootloader show the error.
+            raise
         print(f"Не вдалося запустити графічний інтерфейс ({exc}). Перемикаюся на консольний режим...")
         run_cli()

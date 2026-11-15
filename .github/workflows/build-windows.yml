@@ -1,0 +1,42 @@
+# Builds the ready-to-run Windows folder (no Python needed on the target PC) and tests it.
+# Download: Actions -> "Build Windows app" -> latest run -> Artifacts -> NMT_Sova_Tutor_Windows.
+name: Build Windows app
+
+on:
+  push:
+    branches: [develop, main]
+  workflow_dispatch:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install build tools
+        run: python -m pip install --upgrade pip cryptography pyinstaller pillow
+
+      - name: Smoke test from source (DPAPI key store, GUI)
+        run: python tests/smoke_test.py --real-keystore
+
+      - name: Build with PyInstaller
+        run: pyinstaller --noconfirm packaging/nmt_tutor.spec
+
+      - name: Self-test the packaged exe
+        shell: pwsh
+        run: |
+          $out = Join-Path $env:RUNNER_TEMP "selftest.txt"
+          $p = Start-Process -FilePath "dist\NMT_Sova_Tutor\NMT_Sova_Tutor.exe" `
+               -ArgumentList "--selftest", "--real-keystore", "--out", "`"$out`"" -Wait -PassThru
+          Get-Content $out
+          if ($p.ExitCode -ne 0) { throw "packaged self-test failed (exit $($p.ExitCode))" }
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: NMT_Sova_Tutor_Windows
+          path: dist/
+          retention-days: 90
