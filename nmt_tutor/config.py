@@ -291,3 +291,8 @@ def score_to_nmt200(subject_id, raw_score):
     table = CONVERSION_TABLES[subject_id]
     clamped = min(int(round(raw_score)), cfg["max_score"])
     return table.get(clamped)
+
+
+# Students only use the built-in tasks: the «own task bank (.json)» import/template UI is hidden.
+# The code stays; set to True to show it again.
+CUSTOM_BANKS_UI = False

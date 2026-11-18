@@ -6,7 +6,7 @@ from tkinter import messagebox
 from ...auth import available_providers
 from ...auth.local import PIN_LENGTH, PinGuard, hash_pin, is_valid_pin
 from ...config import SUBJECTS_CONFIG, SUBJECTS_ORDER
-from ...profiles import (AVATARS, DEFAULT_AVATAR, DEFAULT_TARGET, PROVIDER_LOCAL, SCORE_MAX,
+from ...profiles import (AVATARS, DEFAULT_AVATAR, DEFAULT_TARGET, PROVIDER_CLOUD, PROVIDER_LOCAL, SCORE_MAX,
                          SCORE_MIN, ProfileError, avatar_text, format_exam_date, has_pin, new_profile,
                          normalize_profile, parse_exam_date, touch)
 from ..owl import OwlMascot
@@ -65,11 +65,14 @@ class ProfilesScreenMixin:
     def show_profiles(self):
         self._clear_main()
         self._leave_profile()
+        self._pending_cloud_session = None
         profiles = self.store.list_profiles()
         last_id = self.store.get_meta(LAST_PROFILE_KEY)
         profiles.sort(key=lambda p: p["id"] != last_id)  # last used first, otherwise creation order
 
-        self._nav_header("Хто займається?", "Оберіть свій профіль — у кожного учня свої результати, цілі та банки завдань")
+        header = self._nav_header("Хто займається?", "Оберіть свій профіль — у кожного учня свої результати, цілі та банки завдань")
+        if self.cloud_enabled():
+            self._nav_button(header, "☁️ Увійти через пошту", self.cloud_sign_in_from_picker, min_width=190).pack_configure(padx=(0, 22))
 
         body = tk.Frame(self.main_container, bg=PALETTE["bg"])
         body.pack(fill="both", expand=True, padx=20, pady=14)
@@ -121,6 +124,7 @@ class ProfilesScreenMixin:
         self._update_window_title()
         self._setup_menus()
         self.show_setup()
+        self.cloud_sync_soon()
 
     def _leave_profile(self):
         self.profile = None
@@ -250,7 +254,7 @@ class ProfilesScreenMixin:
         body = tk.Frame(self.main_container, bg=PALETTE["bg"])
         body.pack(fill="both", expand=True)
         card = RoundedCard(body, bg=PALETTE["card"], border=PALETTE["border"], parent_bg=PALETTE["bg"], radius=20, pad=22,
-                           width=470, height=430)
+                           width=470, height=470 if self.cloud_enabled() else 430)
         card.place(relx=0.5, rely=0.45, anchor="center")
         form = card.inner
 
@@ -283,6 +287,14 @@ class ProfilesScreenMixin:
         actions.pack(fill="x", side="bottom")
         RoundedButton(actions, text="✨ Створити профіль", command=self._save_new_profile, font=self.fonts["h3"], radius=16,
                       height=42, min_width=210, parent_bg=PALETTE["card"]).pack(side="right")
+        if self.cloud_enabled() and getattr(self, "_pending_cloud_session", None) is None:
+            link = tk.Label(form, text="Вже маєш профіль у хмарі? ☁️ Увійти через пошту", font=self.fonts["small"],
+                            bg=PALETTE["card"], fg=PALETTE["primary"], cursor="hand2")
+            link.pack(side="bottom", anchor="w", pady=(0, 10))
+            link.bind("<Button-1>", lambda _e: self.cloud_sign_in_from_picker())
+        elif getattr(self, "_pending_cloud_session", None) is not None:
+            tk.Label(form, text=f"☁️ Профіль зберігатиметься в хмарі: {self._pending_cloud_session.email}",
+                     font=self.fonts["small"], bg=PALETTE["card"], fg=PALETTE["ok_fg"]).pack(side="bottom", anchor="w", pady=(0, 10))
         if not first_run:
             RoundedButton(actions, text="Скасувати", command=self.show_profiles, bg=PALETTE["card_soft"], hover_bg=PALETTE["soft_indigo"],
                           fg=PALETTE["text"], border_color=PALETTE["border"], font=self.fonts["bold_sm"], radius=16, height=42,
@@ -327,7 +339,8 @@ class ProfilesScreenMixin:
                 tk.Label(form, text=hint, font=self.fonts["small"], bg=PALETTE["card"], fg=PALETTE["muted"], justify="left").pack(anchor="w", pady=(0, 4))
 
         # --- how to sign in -----------------------------------------------------
-        ways = ", ".join(self._provider_title(i["provider"]) for i in profile.get("identities", []))
+        ways = ", ".join(self._provider_title(i["provider"]) + (f" ({i['email']})" if i.get("email") else "")
+                         for i in profile.get("identities", []))
         section("Спосіб входу", ways)
 
         # --- name ------------------------------------------------------------------
@@ -414,7 +427,7 @@ class ProfilesScreenMixin:
         for prov in available_providers():
             if prov.id == provider_id:
                 return f"{prov.icon} {prov.title}"
-        return {"google": "Google", "apple": "Apple"}.get(provider_id, provider_id)
+        return {"google": "Google", "apple": "Apple", PROVIDER_CLOUD: "☁️ Хмарний акаунт"}.get(provider_id, provider_id)
 
     def _refresh_target_rows(self):
         box = getattr(self, "prof_targets_box", None)
@@ -485,11 +498,13 @@ class ProfilesScreenMixin:
                                 f"Результати, звіти й банки з попередніх тренувань (записів: {moved}) додано до профілю «{profile['name']}».")
         if creating:
             self.enter_profile(profile)
+            self._cloud_after_profile_created(profile)
         else:
             self.profile = profile
             self._update_window_title()
             self._setup_menus()
             self.show_cabinet()
+            self.cloud_sync_soon()
 
     def _update_window_title(self):
         from ... import APP_TITLE

@@ -24,6 +24,9 @@ class KeyMismatchError(StorageError):
 class Repository(abc.ABC):
     #: User-facing messages collected while opening the store (shown once by the UI).
     startup_notices = ()
+    #: Whether the store keeps sync state for the cloud (sync_outbox / sync_ack / sync_apply,
+    #: see SQLiteRepository and cloud/sync.py). The in-memory store does not.
+    supports_sync = False
 
     # --- session results -------------------------------------------------
     @abc.abstractmethod

@@ -5,7 +5,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
 from ...banks import CUSTOM_BANK_TEMPLATE, bank_task_count, merge_banks
-from ...config import SUBJECTS_CONFIG, SUBJECTS_ORDER
+from ...config import CUSTOM_BANKS_UI, SUBJECTS_CONFIG, SUBJECTS_ORDER
 from ...data import bank_size
 from ...generators import generator_count
 from ...profiles import DEFAULT_SUBJECTS, avatar_text, short_name
@@ -208,7 +208,8 @@ class SetupScreenMixin:
         self.lbl_custom.pack(anchor="w", pady=(0, 6))
 
         json_row = tk.Frame(right, bg=PALETTE["card"])
-        json_row.pack(fill="x", pady=(0, 6))
+        if CUSTOM_BANKS_UI:
+            json_row.pack(fill="x", pady=(0, 6))
         RoundedButton(
             json_row,
             text="📂 Додати .json",
@@ -289,6 +290,7 @@ class SetupScreenMixin:
                 messagebox.showwarning("Порожній файл", "У вибраному файлі не знайдено коректних завдань для предметів НМТ.")
                 return
             self.repo.save_custom_bank(os.path.basename(path), loaded)
+            self.cloud_sync_soon()
             merge_banks(self.custom_bank, loaded)
             total = bank_task_count(self.custom_bank)
             self.lbl_custom.config(text=f"Додано з вашого файлу: {total} завдань (активні разом із вбудованою базою!).", fg=PALETTE["ok_fg"])
