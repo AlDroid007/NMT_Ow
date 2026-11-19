@@ -47,6 +47,7 @@ class SetupScreenMixin:
             fg="#CBD5E1",
         ).pack(anchor="w")
 
+        self._nav_button(header, "⏻ Вийти", self._quit_app, min_width=96).pack_configure(padx=(0, 22))
         RoundedButton(
             header,
             text=f"{avatar_text(self.profile)} {short_name(self.profile['name'], 14)}",
@@ -59,7 +60,7 @@ class SetupScreenMixin:
             height=36,
             min_width=110,
             parent_bg=PALETTE["nav"],
-        ).pack(side="right", padx=(0, 22), pady=18)
+        ).pack(side="right", padx=(0, 10), pady=18)
         RoundedButton(
             header,
             text="📘 Програми та шкала 100–200",

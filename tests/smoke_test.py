@@ -229,7 +229,7 @@ def gui_cloud_smoke():
         app_a._step_next_hint()
         root.update()
         answer_all(app_a, root)
-        if not pump(root, lambda: cloud.tables["sessions"][sid]["status"] == "finished", seconds=8):
+        if not pump(root, lambda: cloud.tables["sessions"].get(sid, {}).get("status") == "finished", seconds=8):
             errors.append(("auto sync after a session did not upload",))
         if not any(h["session_id"] == sid for h in cloud.tables["hint_events"].values()):
             errors.append(("opened hint was not uploaded",))

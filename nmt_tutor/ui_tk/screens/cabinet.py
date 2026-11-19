@@ -62,9 +62,13 @@ class CabinetScreenMixin:
             lbl.pack(anchor="w")
             lbl.bind("<Button-1>", lambda _e: (self.cloud_status()[1] or (lambda: None))())
             self._cloud_status_label = lbl
-        self._nav_button(header, "⇄ Змінити профіль", self.switch_profile, min_width=150).pack_configure(padx=(0, 22))
+        self._nav_button(header, "⏻ Вийти", self._quit_app, min_width=96).pack_configure(padx=(0, 22))
+        self._nav_button(header, "⇄ Змінити профіль", self.switch_profile, min_width=150)
         self._nav_button(header, "✎ Профіль", lambda: self.show_profile_form(self.profile), min_width=110)
         self._nav_button(header, "🚀 До тренування", self.show_setup, min_width=160)
+        # Buttons first: in a narrow window the long subtitle is clipped instead of the buttons.
+        title_wrap.pack_forget()
+        title_wrap.pack(side="left", pady=10)
 
         scroll = SmoothScrollView(self.main_container, bg=PALETTE["bg"])
         scroll.pack(fill="both", expand=True, padx=14, pady=(10, 0))

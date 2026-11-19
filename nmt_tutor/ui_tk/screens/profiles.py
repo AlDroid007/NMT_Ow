@@ -71,8 +71,9 @@ class ProfilesScreenMixin:
         profiles.sort(key=lambda p: p["id"] != last_id)  # last used first, otherwise creation order
 
         header = self._nav_header("Хто займається?", "Оберіть свій профіль — у кожного учня свої результати, цілі та банки завдань")
+        self._nav_button(header, "⏻ Вийти", self._quit_app, min_width=96).pack_configure(padx=(0, 22))
         if self.cloud_enabled():
-            self._nav_button(header, "☁️ Увійти через пошту", self.cloud_sign_in_from_picker, min_width=190).pack_configure(padx=(0, 22))
+            self._nav_button(header, "☁️ Увійти через пошту", self.cloud_sign_in_from_picker, min_width=190)
 
         body = tk.Frame(self.main_container, bg=PALETTE["bg"])
         body.pack(fill="both", expand=True, padx=20, pady=14)
@@ -323,7 +324,8 @@ class ProfilesScreenMixin:
             return
         self._clear_main()
         self._form_profile = dict(profile)
-        self._nav_header("Мій профіль", "Ім’я, аватар, предмети, цілі та захист PIN-кодом")
+        header = self._nav_header("Мій профіль", "Ім’я, аватар, предмети, цілі та захист PIN-кодом")
+        self._nav_button(header, "⏻ Вийти", self._quit_app, min_width=96).pack_configure(padx=(0, 22))
 
         body = tk.Frame(self.main_container, bg=PALETTE["bg"])
         body.pack(fill="both", expand=True, padx=20, pady=(14, 0))
