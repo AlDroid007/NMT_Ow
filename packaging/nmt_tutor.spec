@@ -44,6 +44,10 @@ datas = [
 ]
 if icon_ico:
     datas.append((icon_ico, "."))
+# Cloud project (URL + public key) when configured; without it the build has no cloud features.
+cloud_config = os.path.join(ROOT, "nmt_tutor", "cloud_config.json")
+if os.path.exists(cloud_config):
+    datas.append((cloud_config, "nmt_tutor"))
 
 a = Analysis(
     [os.path.join(ROOT, "nmt_tutor_mac.py")],

@@ -36,6 +36,8 @@ DEFAULT_TARGET = 170
 PROVIDER_LOCAL = "local"
 PROVIDER_GOOGLE = "google"
 PROVIDER_APPLE = "apple"
+#: Cloud account (Supabase Auth user id); signed in with an e-mail code now, Google / Apple later.
+PROVIDER_CLOUD = "cloud"
 
 
 class ProfileError(ValueError):

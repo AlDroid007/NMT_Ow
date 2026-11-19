@@ -134,8 +134,11 @@ class ResultsScreenMixin:
         try:
             report_id = self.repo.save_report(self._last_report_text, title=f"nmt_report_{datetime.now().strftime('%Y%m%d_%H%M')}")
             result = build_session_result(self.plan, self.length_mode, self.tutor_mode, self.is_mistake_drill,
-                                          focus_section=getattr(self, "focus_section", None), report_id=report_id)
+                                          focus_section=getattr(self, "focus_section", None), report_id=report_id,
+                                          started_at=getattr(self, "session_started_at", None),
+                                          session_uid=getattr(self, "session_uid", None))
             self.repo.save_result(result)
+            self.cloud_sync_soon()
         except Exception as exc:
             print(f"Could not save the session result: {exc}", file=sys.stderr)
             messagebox.showerror("Результат не збережено", f"Не вдалося зберегти результат тренування:\n{exc}")
@@ -143,6 +146,12 @@ class ResultsScreenMixin:
 
     def _start_mistake_drill_session(self):
         drill_plan = build_mistake_drill_plan(self.plan)
+        if drill_plan:
+            subjects = [block["subject"] for block in drill_plan]
+            self.begin_training(subjects, self.length_mode, True, lambda: self._open_mistake_drill(drill_plan),
+                               mistake_drill=True)
+
+    def _open_mistake_drill(self, drill_plan):
         if drill_plan:
             self.tutor_mode = True
             self.is_mistake_drill = True

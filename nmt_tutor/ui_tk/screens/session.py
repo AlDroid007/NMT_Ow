@@ -4,7 +4,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from ...config import SUBJECTS_CONFIG, SUBJECTS_ORDER
-from ...engine import block_score, build_session_plan, evaluate_answer, is_empty_answer
+from ...engine import block_score, build_session_plan, evaluate_answer, is_empty_answer, record_answer, record_hint
 from ...hints import build_10_hints
 from ..owl import OwlMascot
 from ..scroll import SmoothScrollView
@@ -21,8 +21,13 @@ class SessionScreenMixin:
         if not selected:
             messagebox.showwarning("Оберіть предмети", "Позначте бодай один предмет НМТ для початку тренування.")
             return
-        self.tutor_mode = (self.var_mode.get() == "tutor")
-        self.length_mode = self.var_length.get()
+        tutor_mode = (self.var_mode.get() == "tutor")
+        length_mode = self.var_length.get()
+        self.begin_training(selected, length_mode, tutor_mode, lambda: self._open_new_session(selected, length_mode, tutor_mode))
+
+    def _open_new_session(self, selected, length_mode, tutor_mode):
+        self.tutor_mode = tutor_mode
+        self.length_mode = length_mode
         self.plan = build_session_plan(selected, length_mode=self.length_mode, custom_bank=self.custom_bank)
         self.current_block_idx = 0
         self.current_q_idx = 0
@@ -376,6 +381,7 @@ class SessionScreenMixin:
         ok, pts, _, _ = evaluate_answer(block["questions"][idx], u_ans)
         block["answers"][idx] = u_ans
         block["points"][idx] = pts
+        record_answer(block, idx, ok, pts, checked=False, hint_level=getattr(self, "q_hint_level", 0))
         if not ok and idx not in block["mistakes"]:
             block["mistakes"].append(idx)
 
@@ -536,8 +542,11 @@ class SessionScreenMixin:
             self.q_hints_10 = build_10_hints(block["questions"][self.current_q_idx])
 
         if lvl > self.q_hint_level:
-            # Відкриваємо проміжні рівні послідовно або прямо до обраного рівня
+            # Open the levels in between one by one, or jump straight to the chosen level.
             start_lvl = self.q_hint_level + 1
+            block = self.plan[self.current_block_idx]
+            for cur in range(start_lvl, lvl + 1):
+                record_hint(block, self.current_q_idx, cur)
             self._append_chat("student_lbl", "🎓 Учень:", f"Сова-Ліза, дай підказку рівня {lvl}/10!")
             for cur in range(start_lvl, lvl + 1):
                 self._append_chat(
@@ -581,6 +590,7 @@ class SessionScreenMixin:
         ok, pts, u_repr, c_repr = evaluate_answer(q, u_ans)
         block["answers"][self.current_q_idx] = u_ans
         block["points"][self.current_q_idx] = pts
+        record_answer(block, self.current_q_idx, ok, pts, checked=True, hint_level=self.q_hint_level)
         self.btn_submit.set_state("disabled")
 
         self._update_live_score(block)

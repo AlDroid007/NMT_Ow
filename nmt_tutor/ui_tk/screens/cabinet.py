@@ -23,6 +23,7 @@ class CabinetScreenMixin:
             self.start_profiles()
             return
         self._clear_main()
+        self._screen = "cabinet"
         profile = self.profile
         try:
             results = self.repo.list_results()
@@ -31,7 +32,7 @@ class CabinetScreenMixin:
             results = []
 
         # --- header -------------------------------------------------------------
-        header = tk.Frame(self.main_container, bg=PALETTE["nav"], height=78)
+        header = tk.Frame(self.main_container, bg=PALETTE["nav"], height=92 if self.cloud_enabled() else 78)
         header.pack(fill="x")
         header.pack_propagate(False)
         av = tk.Canvas(header, width=54, height=54, bg=PALETTE["nav"], highlightthickness=0, bd=0)
@@ -54,9 +55,20 @@ class CabinetScreenMixin:
         scored = sum(1 for r in results if not r.get("mistake_drill"))
         sub = f"Особистий кабінет • {sub} • тренувань: {scored}"
         tk.Label(title_wrap, text=sub, font=self.fonts["small"], bg=PALETTE["nav"], fg="#CBD5E1").pack(anchor="w")
-        self._nav_button(header, "⇄ Змінити профіль", self.switch_profile, min_width=150).pack_configure(padx=(0, 22))
+        cloud_text, _ = self.cloud_status()
+        self._cloud_status_label = None
+        if cloud_text:
+            lbl = tk.Label(title_wrap, text=cloud_text, font=self.fonts["small"], bg=PALETTE["nav"], fg="#A5B4FC", cursor="hand2")
+            lbl.pack(anchor="w")
+            lbl.bind("<Button-1>", lambda _e: (self.cloud_status()[1] or (lambda: None))())
+            self._cloud_status_label = lbl
+        self._nav_button(header, "⏻ Вийти", self._quit_app, min_width=96).pack_configure(padx=(0, 22))
+        self._nav_button(header, "⇄ Змінити профіль", self.switch_profile, min_width=150)
         self._nav_button(header, "✎ Профіль", lambda: self.show_profile_form(self.profile), min_width=110)
         self._nav_button(header, "🚀 До тренування", self.show_setup, min_width=160)
+        # Buttons first: in a narrow window the long subtitle is clipped instead of the buttons.
+        title_wrap.pack_forget()
+        title_wrap.pack(side="left", pady=10)
 
         scroll = SmoothScrollView(self.main_container, bg=PALETTE["bg"])
         scroll.pack(fill="both", expand=True, padx=14, pady=(10, 0))
@@ -219,6 +231,10 @@ class CabinetScreenMixin:
         if not plan:
             messagebox.showinfo("Тема", "Для цієї теми поки немає завдань.")
             return
+        self.begin_training([subject_id], "focus", True, lambda: self._open_focus_session(plan, section),
+                           focus_section=section)
+
+    def _open_focus_session(self, plan, section):
         self.tutor_mode = True
         self.length_mode = "focus"
         self.is_mistake_drill = False

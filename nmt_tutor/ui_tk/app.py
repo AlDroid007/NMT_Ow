@@ -6,10 +6,12 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 
 from .. import APP_TITLE, APP_VERSION
+from ..config import CUSTOM_BANKS_UI
 from ..data import bank_size
 from ..generators import generator_count
 from ..resources import app_file, launcher_path, is_frozen
 from .screens.cabinet import CabinetScreenMixin
+from .screens.cloud import CloudMixin
 from .screens.drill import DrillMixin
 from .screens.profiles import ProfilesScreenMixin
 from .screens.results import ResultsScreenMixin
@@ -19,7 +21,8 @@ from .scroll import SmoothScrollView
 from .theme import IS_MAC, IS_WIN, PALETTE, os_label, pick_fonts
 
 
-class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, SessionScreenMixin, DrillMixin, ResultsScreenMixin):
+class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, CloudMixin, SetupScreenMixin, SessionScreenMixin, DrillMixin,
+                  ResultsScreenMixin):
     def __init__(self, root, store):
         self.root = root
         # Whole user data store; `self.repo` is the active profile's view of it (None on the picker).
@@ -112,12 +115,13 @@ class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, Ses
 
             menubar = tk.Menu(self.root)
             file_menu = tk.Menu(menubar, tearoff=0)
-            if active:
+            banks = active and CUSTOM_BANKS_UI
+            if banks:
                 file_menu.add_command(label="Додати свій банк (.json)…", accelerator=accel_o, command=self._on_load_json)
                 file_menu.add_command(label="Зберегти шаблон (.json)…", command=self._on_export_template)
             if IS_WIN:
                 file_menu.add_command(label="Створити ярлик на Робочому столі", command=self._create_windows_shortcut)
-            if active or IS_WIN:
+            if banks or IS_WIN:
                 file_menu.add_separator()
             file_menu.add_command(label="Вийти з програми", accelerator=accel_q, command=self._quit_app)
             menubar.add_cascade(label="Файл", menu=file_menu)
@@ -126,6 +130,14 @@ class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, Ses
                 profile_menu = tk.Menu(menubar, tearoff=0)
                 profile_menu.add_command(label="Особистий кабінет", command=self.show_cabinet)
                 profile_menu.add_command(label="Редагувати профіль…", command=lambda: self.show_profile_form(self.profile))
+                if self.cloud_enabled():
+                    profile_menu.add_separator()
+                    if self.cloud_linked():
+                        profile_menu.add_command(label="☁️ Синхронізувати зараз", command=lambda: self.cloud_sync(manual=True))
+                        profile_menu.add_command(label="☁️ Вийти з хмари на цьому комп’ютері", command=self.cloud_disconnect)
+                        profile_menu.add_command(label="☁️ Видалити дані з хмари…", command=self.cloud_delete_account)
+                    else:
+                        profile_menu.add_command(label="☁️ Зберігати в хмарі…", command=self.cloud_connect)
                 profile_menu.add_separator()
                 profile_menu.add_command(label="Змінити профіль", command=self.switch_profile)
                 menubar.add_cascade(label="Профіль", menu=profile_menu)
@@ -161,8 +173,8 @@ class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, Ses
             pass
 
     def _load_json_if_active(self):
-        """⌘O / Ctrl+O: only with an active profile (banks belong to a profile)."""
-        if self.profile is not None:
+        """⌘O / Ctrl+O: only with an active profile (banks belong to a profile) and the bank UI shown."""
+        if self.profile is not None and CUSTOM_BANKS_UI:
             self._on_load_json()
 
     def _create_windows_shortcut(self):
@@ -220,6 +232,7 @@ class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, Ses
             "• Багаторівневі підказки Сови-Лізи (рівні 1–10)\n"
             "• Плавна анімована прокрутка та адаптація під екран\n"
             "• Профілі учнів з цілями, особистий кабінет і PIN-код\n"
+            "• Хмарне збереження профілю (вхід кодом із пошти)\n"
             "• Результати, звіти та власні банки зберігаються зашифровано в Документи/NMT_Tutor"
         )
 
@@ -247,6 +260,7 @@ class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, SetupScreenMixin, Ses
 
     def _clear_main(self):
         self._stop_timer()
+        self._screen = None
         self._chat_labels = []
         for w in self.main_container.winfo_children():
             w.destroy()

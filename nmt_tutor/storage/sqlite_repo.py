@@ -1,13 +1,15 @@
 """Local SQLite implementation of the repository with encrypted record payloads.
 
-Only ids, creation timestamps, the owning profile id (a random UUID), the
-schema version and settings keys are stored in clear; every payload (profiles,
+Only ids, sync ids (random UUIDs), timestamps, the owning profile id (a random
+UUID), sync flags, the schema version and settings keys are stored in clear; every payload (profiles,
 results, report text and title, bank contents and name, setting values) is
 AES-GCM encrypted with the key from the OS key store. Sign-in identities are
 looked up by a keyed hash, never stored in clear.
 """
 
 import sqlite3
+import time
+import uuid
 from datetime import datetime
 
 from .base import KeyMismatchError, Repository
@@ -75,14 +77,37 @@ def _migrate_to_v2(conn):
     )
 
 
+def _migrate_to_v3(conn):
+    """Cloud sync of sessions: every result gets a UUID (`uid` = session id in the cloud)
+    and a `dirty` mark (0 = the cloud has it, otherwise a change number, so a row changed
+    while an upload was in flight stays dirty). Profiles get the same `dirty` mark.
+    """
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(results)")}
+    if "uid" not in cols:
+        conn.execute("ALTER TABLE results ADD COLUMN uid TEXT")
+    if "dirty" not in cols:
+        conn.execute("ALTER TABLE results ADD COLUMN dirty INTEGER NOT NULL DEFAULT 0")
+    for (rid,) in conn.execute("SELECT id FROM results WHERE uid IS NULL").fetchall():
+        conn.execute("UPDATE results SET uid = ?, dirty = 1 WHERE id = ?", (uuid.uuid4().hex, rid))
+    conn.execute("CREATE UNIQUE INDEX IF NOT EXISTS results_uid ON results (uid)")
+    cols = {row[1] for row in conn.execute("PRAGMA table_info(profiles)")}
+    if "dirty" not in cols:
+        conn.execute("ALTER TABLE profiles ADD COLUMN dirty INTEGER NOT NULL DEFAULT 1")
+
+
 # Index i migrates the schema from version i to i + 1 (PRAGMA user_version).
-MIGRATIONS = [_migrate_to_v1, _migrate_to_v2]
+MIGRATIONS = [_migrate_to_v1, _migrate_to_v2, _migrate_to_v3]
 _DATA_TABLES = ("results", "reports", "custom_banks")
 SCHEMA_VERSION = len(MIGRATIONS)
 
 
 def _now():
     return datetime.now().isoformat(timespec="seconds")
+
+
+def _change_no():
+    """Non-zero, increasing change number for the `dirty` column."""
+    return time.time_ns()
 
 
 class SQLiteRepository(Repository):
@@ -129,14 +154,24 @@ class SQLiteRepository(Repository):
         created = created_at or _now()
         blob = self._cipher.encrypt_json(obj, table.encode("ascii"))
         with self._conn:
-            cur = self._conn.execute(
-                f"INSERT INTO {table} (created_at, payload, profile_id) VALUES (?, ?, ?)", (created, blob, profile_id)
-            )
+            if table == "results":
+                # The session id from the app becomes the cloud id; old results get a fresh one.
+                uid = obj.get("session_uid") or uuid.uuid4().hex
+                cur = self._conn.execute(
+                    "INSERT INTO results (created_at, payload, profile_id, uid, dirty) VALUES (?, ?, ?, ?, ?)",
+                    (created, blob, profile_id, uid, _change_no()),
+                )
+            else:
+                cur = self._conn.execute(
+                    f"INSERT INTO {table} (created_at, payload, profile_id) VALUES (?, ?, ?)", (created, blob, profile_id)
+                )
         return cur.lastrowid
 
     def _rows(self, table, profile_id, order="ASC"):
+        # Rows pulled from the cloud arrive later than newer local ones, so order by time, not id.
         rows = self._conn.execute(
-            f"SELECT id, created_at, payload FROM {table} WHERE profile_id IS ? ORDER BY id {order}", (profile_id,)
+            f"SELECT id, created_at, payload FROM {table} WHERE profile_id IS ? ORDER BY created_at {order}, id {order}",
+            (profile_id,),
         ).fetchall()
         aad = table.encode("ascii")
         return [(rid, created, self._cipher.decrypt_json(blob, aad)) for rid, created, blob in rows]
@@ -218,15 +253,15 @@ class SQLiteRepository(Repository):
         row = self._conn.execute("SELECT payload FROM profiles WHERE id = ?", (profile_id,)).fetchone()
         return self._cipher.decrypt_json(row[0], b"profiles") if row else None
 
-    def save_profile(self, profile):
+    def save_profile(self, profile, _dirty=True):
         pid = profile["id"]
         blob = self._cipher.encrypt_json(profile, b"profiles")
         created = profile.get("created_at") or _now()
         updated = profile.get("updated_at") or created
         with self._conn:
             self._conn.execute(
-                "INSERT OR REPLACE INTO profiles (id, created_at, updated_at, payload) VALUES (?, ?, ?, ?)",
-                (pid, created, updated, blob),
+                "INSERT OR REPLACE INTO profiles (id, created_at, updated_at, payload, dirty) VALUES (?, ?, ?, ?, ?)",
+                (pid, created, updated, blob, _change_no() if _dirty else 0),
             )
             self._conn.execute("DELETE FROM identities WHERE profile_id = ?", (pid,))
             for ident in profile.get("identities", []):
@@ -265,6 +300,74 @@ class SQLiteRepository(Repository):
                     f"UPDATE {table} SET profile_id = ? WHERE profile_id IS NULL", (profile_id,)
                 ).rowcount
         return moved
+
+    # --- cloud sync (see cloud/sync.py) --------------------------------------
+    supports_sync = True
+
+    def sync_outbox(self, profile_id):
+        """What the cloud does not have yet: the profile (if changed) and finished sessions."""
+        out = {"profile": None, "results": []}
+        row = self._conn.execute("SELECT payload, dirty FROM profiles WHERE id = ?", (profile_id,)).fetchone()
+        if row is None:
+            return out
+        if row[1]:
+            out["profile"] = dict(self._cipher.decrypt_json(row[0], b"profiles"), _dirty=row[1])
+        rows = self._conn.execute(
+            "SELECT uid, created_at, payload, dirty FROM results WHERE profile_id = ? AND dirty != 0 ORDER BY created_at, id",
+            (profile_id,),
+        ).fetchall()
+        for uid, created, blob, dirty in rows:
+            out["results"].append({"uid": uid, "created_at": created, "payload": self._cipher.decrypt_json(blob, b"results"),
+                                   "_dirty": dirty})
+        return out
+
+    def sync_known_results(self, profile_id):
+        """UUIDs of the profile's results already on this device."""
+        return {r[0] for r in self._conn.execute("SELECT uid FROM results WHERE profile_id = ?", (profile_id,))}
+
+    def sync_mark_all_dirty(self, profile_id):
+        """Queues the whole profile for upload (after linking it to another cloud account)."""
+        with self._conn:
+            self._conn.execute("UPDATE profiles SET dirty = ? WHERE id = ?", (_change_no(), profile_id))
+            self._conn.execute("UPDATE results SET dirty = ? WHERE profile_id = ?", (_change_no(), profile_id))
+
+    def sync_ack(self, profile_id, outbox, uploaded_results=None):
+        """Marks uploads as done, unless the rows changed again since sync_outbox()."""
+        with self._conn:
+            prof = outbox.get("profile")
+            if prof:
+                self._conn.execute("UPDATE profiles SET dirty = 0 WHERE id = ? AND dirty = ?", (profile_id, prof["_dirty"]))
+            done = set(uploaded_results) if uploaded_results is not None else None
+            for rec in outbox.get("results", ()):
+                if done is None or rec["uid"] in done:
+                    self._conn.execute("UPDATE results SET dirty = 0 WHERE uid = ? AND dirty = ?", (rec["uid"], rec["_dirty"]))
+
+    def sync_apply(self, profile_id, pulled):
+        """Stores what came from the cloud (profile fields, sessions from other devices). Returns rows changed."""
+        changed = 0
+        cloud_prof = pulled.get("profile")
+        if cloud_prof:
+            row = self._conn.execute("SELECT payload, dirty FROM profiles WHERE id = ?", (profile_id,)).fetchone()
+            if row is not None and not row[1]:
+                local = self._cipher.decrypt_json(row[0], b"profiles")
+                fields = ("name", "avatar", "subjects", "targets", "exam_date")
+                if any(local.get(f) != cloud_prof.get(f) for f in fields):
+                    local.update({f: cloud_prof.get(f) for f in fields})
+                    local["updated_at"] = cloud_prof.get("updated_at") or local.get("updated_at")
+                    self.save_profile(local, _dirty=False)
+                    changed += 1
+        with self._conn:
+            for rec in pulled.get("results", ()):
+                exists = self._conn.execute("SELECT 1 FROM results WHERE uid = ?", (rec["uid"],)).fetchone()
+                if exists:
+                    continue  # sessions never change after they are finished
+                blob = self._cipher.encrypt_json(rec["payload"], b"results")
+                self._conn.execute(
+                    "INSERT INTO results (created_at, payload, profile_id, uid, dirty) VALUES (?, ?, ?, ?, 0)",
+                    (rec["created_at"], blob, profile_id, rec["uid"]),
+                )
+                changed += 1
+        return changed
 
     # --- settings ------------------------------------------------------------
     def get_meta(self, key, default=None):

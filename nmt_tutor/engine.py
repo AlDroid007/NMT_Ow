@@ -203,6 +203,7 @@ def generate_test_for_subject(subject_id, length_mode="quick", custom_bank=None)
                 seen_prompts.add(cand["prompt"])
         elif static_pool:
             cand = dict(random.choice(static_pool))
+            cand["bank_id"] = cand.get("id")
             cand["id"] = f"{subject_id}_rep_{len(questions)+1}"
             questions.append(cand)
         else:
@@ -219,7 +220,61 @@ def new_block(subject_id, questions):
         "points": {},
         "mistakes": [],
         "drills_done": 0,
+        "answer_log": {},  # question index -> answer record (record_answer)
+        "hint_log": [],    # opened hint levels (record_hint)
     }
+
+
+# --- per-answer and per-hint records (uploaded to the cloud for statistics) --------------
+
+_BANK_IDS = None
+
+
+def task_ref(q):
+    """Stable task id: the bank id, or "gen:<generator key>" for generated tasks."""
+    global _BANK_IDS
+    if _BANK_IDS is None:
+        _BANK_IDS = {t.get("id") for tasks in get_bank().values() for t in tasks}
+    if q.get("bank_id"):
+        return q["bank_id"]
+    if q.get("id") in _BANK_IDS:
+        return q["id"]
+    if q.get("drill_key"):
+        return f"gen:{q['drill_key']}"
+    return q.get("id")
+
+
+def _now_iso():
+    return datetime.now().isoformat(timespec="seconds")
+
+
+def record_answer(block, idx, ok, points, checked=True, hint_level=0):
+    """Remembers how task `idx` of the block was answered (the last answer wins)."""
+    q = block["questions"][idx]
+    block.setdefault("answer_log", {})[idx] = {
+        "subject": block["subject"],
+        "question_no": idx,
+        "task_id": task_ref(q),
+        "section": q.get("section", "Загальне"),
+        "qtype": q.get("qtype"),
+        "is_correct": bool(ok),
+        "points": int(points),
+        "max_points": int(q.get("max_points", 1)),
+        "checked": bool(checked),
+        "max_hint_level": int(hint_level or 0),
+        "answered_at": _now_iso(),
+    }
+
+
+def record_hint(block, idx, level):
+    """Remembers that hint `level` (1-10) of task `idx` was opened."""
+    block.setdefault("hint_log", []).append({
+        "subject": block["subject"],
+        "question_no": idx,
+        "task_id": task_ref(block["questions"][idx]),
+        "level": int(level),
+        "opened_at": _now_iso(),
+    })
 
 
 def build_session_plan(selected_subjects, length_mode="quick", custom_bank=None):
@@ -332,15 +387,26 @@ def compute_subject_summary(block):
     }
 
 
-def build_session_result(plan, length_mode, tutor_mode, mistake_drill=False, focus_section=None, report_id=None):
-    """Serializable record of a finished session (what storage keeps as progress)."""
+def build_session_result(plan, length_mode, tutor_mode, mistake_drill=False, focus_section=None, report_id=None,
+                         started_at=None, session_uid=None):
+    """Serializable record of a finished session (what storage keeps as progress).
+
+    `answers` and `hints` list every answered task and every opened hint level
+    (see record_answer / record_hint); `session_uid` is the session id in the cloud.
+    """
     result = {
-        "finished_at": datetime.now().isoformat(timespec="seconds"),
+        "finished_at": _now_iso(),
         "length_mode": length_mode,
         "tutor_mode": bool(tutor_mode),
         "mistake_drill": bool(mistake_drill),
         "subjects": [compute_subject_summary(block) for block in plan],
+        "answers": [rec for block in plan for _, rec in sorted(block.get("answer_log", {}).items())],
+        "hints": [rec for block in plan for rec in block.get("hint_log", [])],
     }
+    if started_at:
+        result["started_at"] = started_at
+    if session_uid:
+        result["session_uid"] = session_uid
     if focus_section:
         result["focus_section"] = focus_section
     if report_id is not None:
