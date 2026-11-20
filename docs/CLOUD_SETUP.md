@@ -41,6 +41,10 @@
 `profile_meta`, `sessions`, `session_subjects`, `session_answers`, `hint_events`, `profile_subject_stats`,
 `app_settings`, `products`, `purchases`, `entitlements`, `session_credits`, `admins`.
 
+Для веб-версии так же запусти [`supabase/migrations/20261120000000_access_gate.sql`](../supabase/migrations/20261120000000_access_gate.sql)
+(закрытый доступ по логину и паролю) и добавь первый логин:
+`select public.set_gate_login('логин', 'пароль');` — подробнее в [`WEB.md`](WEB.md#закрытый-доступ-логин-и-пароль).
+
 ## 3. Вход по коду из почты
 
 Программа входит без пароля: ученик вводит почту, получает 6-значный код и вводит его.
