@@ -1,0 +1,471 @@
+{
+ "eng_verb_agreement": {
+  "subject": "english",
+  "section": "Use of English: Граматика (Task 6)",
+  "prompt_head": "Choose the correct answer (A, B, C or D):\n",
+  "cases": [
+   [
+    "Most robots have three essential features that _______ them easy to control.",
+    [
+     "making",
+     "make",
+     "makes",
+     "is making"
+    ],
+    "B",
+    "Визнач, якого слова стосується 'that': 'features' (множина)!",
+    "Після 'that / which / who' в означальному підрядному реченні дієслово узгоджується з іменником перед ним. 'Features' — множина → потрібне дієслово без -s (make).",
+    "Підмет перед 'that' — 'three essential features' (множина), отже правильна форма у множині — make (B)."
+   ],
+   [
+    "Every student who participates in the NMT marathon _______ a detailed progress chart.",
+    [
+     "receive",
+     "receiving",
+     "receives",
+     "are receiving"
+    ],
+    "C",
+    "Поглянь на головний підмет речення: 'Every student' — це однина чи множина?",
+    "Слова 'every', 'each', 'everyone', 'someone' в англійській ЗАВЖДИ вимагають дієслова в однині (+ -s у Present Simple)!",
+    "Підмет 'Every student' — однина, тому правильне дієслово — receives (C)."
+   ],
+   [
+    "A collection of rare historical maps _______ displayed in the central museum hall this month.",
+    [
+     "are",
+     "were",
+     "is",
+     "have been"
+    ],
+    "C",
+    "Не потрап у пастку зі словом 'maps' перед дієсловом! Хто є головним підметом: 'maps' чи 'A collection'?",
+    "У конструкції «A [noun] of [plural nouns]» дієслово узгоджується з ПЕРШИМ словом до 'of' (a collection — одн.), а не зі словом після 'of'!",
+    "Головне слово — 'A collection' (одна колекція, одн.), тож потрібно is (C)."
+   ],
+   [
+    "Neither the teacher nor the students _______ ready to finish the discussion early.",
+    [
+     "is",
+     "was",
+     "were",
+     "has been"
+    ],
+    "C",
+    "У сполучнику 'neither ... nor ...' дієслово узгоджується з найближчим до нього підметом ('the students').",
+    "Правило близькості: у 'neither A nor B' та 'either A or B' форма дієслова залежить від B (того, хто стоїть ближче до дієслова).",
+    "Найближчий підмет 'the students' — множина, отже обираємо were (C)."
+   ]
+  ]
+ },
+ "eng_passive_past": {
+  "subject": "english",
+  "section": "Use of English: Граматика (Task 6)",
+  "prompt_head": "Choose the correct answer (A, B, C or D):\n",
+  "cases": [
+   [
+    "The novel became famous in 1961 and _______ into an award-winning film in 1962.",
+    [
+     "is made",
+     "has been made",
+     "was made",
+     "had been made"
+    ],
+    "C",
+    "Є точна дата в минулому ('in 1962'), а сам роман фільм НЕ знімає — його екранізували (пасив).",
+    "Якщо вказано конкретний рік або момент у минулому (in 1962, yesterday, two years ago), вживаємо Past Simple. Для пасиву (дія над предметом): was / were + V3.",
+    "Точний рік у минулому (1962) + пасивна дія → Past Simple Passive: was made (C)."
+   ],
+   [
+    "The first electric tram line in Kyiv _______ in 1892, transforming urban transport.",
+    [
+     "opens",
+     "was opened",
+     "has been opened",
+     "is opened"
+    ],
+    "B",
+    "Лінія трамвая сама себе не відкривала (пасив), і вказано точний 1892 рік.",
+    "Конкретний рік у минулому завжди скасовує Present Perfect ('has been') і вимагає Past Simple Passive ('was/were + V3').",
+    "У 1892 році → Past Simple Passive: was opened (B)."
+   ],
+   [
+    "Nowadays, thousands of tonnes of plastic bottles _______ every week to reduce pollution.",
+    [
+     "recycle",
+     "are recycled",
+     "recycled",
+     "were recycling"
+    ],
+    "B",
+    "Маркер 'nowadays / every week' — теперішній регулярний час, а пляшки самі себе не переробляють.",
+    "Регулярна дія в теперішньому часі (Present Simple) + об’єкт зазнає дії → am / is / are + V3.",
+    "У множині в Present Simple Passive: are recycled (B)."
+   ],
+   [
+    "By the time the rescue team arrived, all the hikers _______ safely from the mountain.",
+    [
+     "were evacuated",
+     "have been evacuated",
+     "had been evacuated",
+     "are evacuated"
+    ],
+    "C",
+    "Маркер 'By the time + Past Simple' означає дію, завершену ДО іншого моменту в минулому.",
+    "Передминулий час (дія завершилася раніше за іншу подію в минулому, маркер 'by the time') у пасиві: had been + V3.",
+    "Евакуація закінчилася до прибуття команди → Past Perfect Passive: had been evacuated (C)."
+   ]
+  ]
+ },
+ "eng_connectors_whether": {
+  "subject": "english",
+  "section": "Use of English: Граматика (Task 6)",
+  "prompt_head": "Choose the correct answer (A, B, C or D):\n",
+  "cases": [
+   [
+    "_______ you study in the morning or late at night, regular practice is the key to success.",
+    [
+     "When",
+     "Why",
+     "While",
+     "Whether"
+    ],
+    "D",
+    "Подивись на слово 'or' у другій частині речення! Яке слово завжди утворює пару '... or ...'?",
+    "Зв’язка 'Whether ... or (not)' перекладається «незалежно від того, ... чи (ні)». Ні 'When', ні 'While' із 'or not / or' так не працюють.",
+    "Є парний сполучник 'or' — правильний вибір Whether (D)."
+   ],
+   [
+    "Some learners prefer paper flashcards, _______ others revise vocabulary using mobile apps.",
+    [
+     "therefore",
+     "whereas",
+     "whether",
+     "since"
+    ],
+    "B",
+    "Дві частини протиставляються (одні надають перевагу паперовим карткам, тоді як інші — застосункам).",
+    "'Whereas' = «тоді як / у той час як» (протиставлення). 'Therefore' = «тому», 'since' = «оскільки / відтоді як».",
+    "Протиставлення двох груп → whereas (B)."
+   ],
+   [
+    "_______ the heavy rain, the outdoor charity concert attracted hundreds of visitors.",
+    [
+     "Although",
+     "Despite",
+     "However",
+     "Because"
+    ],
+    "B",
+    "Після пропуску стоїть іменник ('the heavy rain'), а не ціле речення (підмет + присудок)!",
+    "Запам’ятай пастку НМТ: 'Although' вимагає (підмет + дієслово), а 'Despite / In spite of' вимагають іменника або V-ing! 'Despite the rain', але 'Although it rained'.",
+    "Після пропуску іменна група 'the heavy rain' → Despite (B)."
+   ],
+   [
+    "You should save a copy of your essay _______ your laptop unexpectedly turns off.",
+    [
+     "in case",
+     "unless",
+     "although",
+     "provided"
+    ],
+    "A",
+    "Навіщо ми зберігаємо копію? На той випадок, якщо ноутбук вимкнеться.",
+    "'In case' = «на випадок якщо» (дія заздалегідь для підстраховки). 'Unless' = «якщо не».",
+    "Дія про всяк випадок → in case (A)."
+   ]
+  ]
+ },
+ "eng_vocab_context": {
+  "subject": "english",
+  "section": "Use of English: Лексика (Task 5)",
+  "prompt_head": "Choose the correct answer (A, B, C or D):\n",
+  "cases": [
+   [
+    "_______ spending hours scrolling social media, Maya decided to learn Spanish.",
+    [
+     "Except for",
+     "Instead of",
+     "Owing to",
+     "Aside from"
+    ],
+    "B",
+    "Вона не сиділа в соцмережах, а вирішила натомість вивчати іспанську.",
+    "'Instead of' + V-ing = «замість того щоб». 'Owing to' = «завдяки / через», 'except for' = «за винятком».",
+    "Значення «замість цього» → Instead of (B)."
+   ],
+   [
+    "Upon _______ the familiar melody, the lost dog immediately ran toward its owner.",
+    [
+     "hearing",
+     "listening",
+     "observing",
+     "picking"
+    ],
+    "A",
+    "Собака почув звук (мимоволі) — і зверни увагу, що після пропуску НЕМАЄ прийменника 'to'!",
+    "Головна відмінність на НМТ: 'listen TO' (вимагає 'to', прислухатися), а 'hear' (почути, без 'to').",
+    "Немає прийменника 'to' + значення «почути» → hearing (A)."
+   ],
+   [
+    "The museum hopes to give the ancient manuscript _______ life by digitising all its pages.",
+    [
+     "further",
+     "the further",
+     "farther",
+     "the farthest"
+    ],
+    "A",
+    "Йдеться про переносне значення («подальше, нове життя»), а не про фізичну відстань, і без артикля 'the'.",
+    "'Farther' — лише про фізичну відстань (кілометри). 'Further' — переносне значення («подальший, додатковий»): further information, further life.",
+    "У значенні «подальший» без артикля перед незлічуваним/абстрактним поняттям → further (A)."
+   ],
+   [
+    "Before signing the contract, the lawyer carefully _______ every paragraph of the document.",
+    [
+     "looked through",
+     "looked about",
+     "looked down",
+     "looked out"
+    ],
+    "A",
+    "Юрист уважно переглянув кожен абзац.",
+    "Фразові дієслова з LOOK: look through (переглянути текст/документ), look for (шукати), look after (доглядати), look out (стерегтися).",
+    "Переглянути документ → looked through (A)."
+   ]
+  ]
+ },
+ "eng_reading_ads": {
+  "cases": [
+   [
+    "GREEN CITY BIKE RENTAL: Explore downtown parks and historic streets on an electric bike! Daily and weekly passes available online.",
+    [
+     "eating out",
+     "hiring a vehicle",
+     "shopping opportunities",
+     "a job offer"
+    ],
+    "B",
+    "Ключові слова: 'Bike Rental', 'daily and weekly passes'. Bike — це транспортний засіб (vehicle), rental = hiring.",
+    "У Task 1 (Reading) правильна відповідь майже завжди є перефразуванням: rent a bike = hire a vehicle.",
+    "Оренда велосипедів = hiring a vehicle (B)."
+   ],
+   [
+    "SUNRISE BAKERY IS HIRING! Friendly baristas and weekend cashiers wanted. $15/hour + tips. Send your CV to jobs@sunrise.org.",
+    [
+     "eating out",
+     "an educational institution",
+     "a job offer",
+     "medical services"
+    ],
+    "C",
+    "Слова 'is hiring', '$15/hour', 'Send your CV' вказують на вакансію.",
+    "Не плутай рекламу кав’ярні з вакансією в кав’ярні! Якщо вказані зарплата й резюме (CV/resume), це 'a job offer'.",
+    "Пошук працівників і прийом резюме = a job offer (C)."
+   ],
+   [
+    "CLEAR VISION CLINIC: Comprehensive eye exams, glasses fitting, and laser consultation with experienced doctors. Book your appointment today.",
+    [
+     "shopping opportunities",
+     "a holiday party",
+     "a visit to the theatre",
+     "medical services"
+    ],
+    "D",
+    "Ключові слова: 'Clinic', 'eye exams', 'doctors', 'appointment'.",
+    "Слова clinic, care, health, doctors, appointment однозначно вказують на medical services.",
+    "Обстеження в лікарів у клініці = medical services (D)."
+   ],
+   [
+    "OAKWOOD PERFORMING ARTS SCHOOL: Grades 7–12 college prep with theatre, music, and visual arts. Admissions deadline: Feb 1.",
+    [
+     "an educational institution",
+     "a visit to the theatre",
+     "a job offer",
+     "eating out"
+    ],
+    "A",
+    "Обережно, пастка! Слово 'theatre' тут лише частина шкільної програми ('Grades 7–12', 'Admissions').",
+    "Класична пастка НМТ: у тексті про школу мистецтв є слово 'theatre', але сам текст про вступ до школи (Grades 7–12, Admissions) → 'an educational institution'.",
+    "Школа з набором учнів (admissions) = an educational institution (A)."
+   ]
+  ]
+ },
+ "ger_gram_context": {
+  "subject": "german",
+  "section": "Grammatik: Граматика в контексті",
+  "prompt_head": "Wählen Sie die richtige Variante (A, B, C oder D):\n",
+  "cases": [
+   [
+    "_______ das Programm zu benutzen, muss man kein Informatik-Experte sein.",
+    [
+     "ohne",
+     "damit",
+     "statt",
+     "um"
+    ],
+    "D",
+    "Подивись у кінець частини речення: стоїть '... zu benutzen'. Яка конструкція з інфінітивом перекладається «щоб»?",
+    "Конструкція 'um ... zu + Infinitiv' виражає мету («щоб...»). Сполучник 'damit' теж перекладається «щоб», але вимагає ПОВНОГО речення з дієсловом у кінці без 'zu'!",
+    "Є частка 'zu' перед інфінітивом і значення мети («щоб користуватися програмою») → um (D)."
+   ],
+   [
+    "Mit der neuen Software _______ schon das alte Wörterbuch erfolgreich digitalisiert.",
+    [
+     "wurde",
+     "werde",
+     "wurdet",
+     "werdet"
+    ],
+    "A",
+    "Словник сам себе не оцифровував — це пасив у минулому часі (Präteritum Passiv) для 'das Wörterbuch' (3-тя особа одн.).",
+    "Präteritum Passiv утворюється за допомогою 'wurde / wurden + Partizip II'. Для однини (es/das Wörterbuch) завжди 'wurde'.",
+    "Однина (das Wörterbuch) у минулому пасиві → wurde (A)."
+   ],
+   [
+    "Das Programm scannt historische Texte, _______ der Computer danach lesen kann.",
+    [
+     "der",
+     "des",
+     "dem",
+     "den"
+    ],
+    "D",
+    "Відносний займенник стосується 'Text' (чоловічий рід, der Text), але в підрядному він є додатком: комп’ютер читає (кого? що? — Akkusativ!).",
+    "В означальному підрядному рід і число займенника беремо від слова перед комою (der Text → чол. р., одн.), а відмінок — від дієслова всередині підрядного (lesen + Akkusativ → den).",
+    "Чоловічий рід, Akkusativ (що? текст) → den (D)."
+   ],
+   [
+    "Es ist wichtig, dass _______ als fünf Prozent der Antworten falsch sind.",
+    [
+     "wenig",
+     "wenige",
+     "weniger",
+     "wenigen"
+    ],
+    "C",
+    "Бачиш слово 'als' (ніж) після пропуску? Це маркер вищого ступеня порівняння!",
+    "Перед сполучником порівняння 'als' («ніж») завжди стоїть вищий ступінь порівняння (Komparativ): менше ніж = weniger als.",
+    "Порівняння 'als' вимагає вищого ступеня → weniger (C)."
+   ]
+  ]
+ },
+ "fr_gram_context": {
+  "subject": "french",
+  "section": "Grammaire: Граматика в контексті",
+  "prompt_head": "Choisissez la bonne réponse (A, B, C ou D) :\n",
+  "cases": [
+   [
+    "— Qui a mangé le pain ?\n— J’ai pris _______ pain et de la confiture.",
+    [
+     "du",
+     "de la",
+     "de",
+     "d’un"
+    ],
+    "A",
+    "Слово 'pain' — чоловічого роду (le pain), стверджувальне речення, незлічувана кількість («трохи хліба»).",
+    "Частковий артикль у французькій: de + le = du (чол. р.), de la (жін. р.), de l' (перед голосною). У запереченні змінюється просто на 'de'.",
+    "Чоловічий рід, стверджувальне речення → du (A)."
+   ],
+   [
+    "Je ne sais pas si elle viendra. Mais si je la _______ chez André, j’enverrai un message.",
+    [
+     "verrai",
+     "verrais",
+     "vois",
+     "vis"
+    ],
+    "C",
+    "У другій частині стоїть майбутній час ('j'enverrai'). Який час ЗАВЖДИ ставиться в умові після 'si' (якщо), коли результат у майбутньому?",
+    "Золоте правило НМТ із французької: після умовного 'si' НІКОЛИ не ставиться Futur simple чи Conditionnel! Для 1-го типу умови: Si + Présent → Futur simple.",
+    "Після умовного 'si' (якщо) за майбутнього результату потрібен теперішній час (Présent) → vois (C)."
+   ],
+   [
+    "Tous les enfants ont le même âge. Cependant, _______ élèves ont plus de difficultés que d’autres.",
+    [
+     "aucun",
+     "autres",
+     "certains",
+     "tous les"
+    ],
+    "C",
+    "Є протиставлення '... ont plus de difficultés que d’autres' («ніж інші»). Тобто «деякі учні».",
+    "'Certains' (деякі) + іменник у множині без артикля узгоджується з дієсловом у множині ('ont'). 'Aucun' вимагає 'ne' та однини.",
+    "За змістом та узгодженням у множині ('ont') підходить certains (C)."
+   ],
+   [
+    "Tous les vacanciers n’empruntent pas le même transport. Généralement, _______ n’est pressé de rentrer.",
+    [
+     "aucun",
+     "certains",
+     "chacun",
+     "quelqu’un"
+    ],
+    "A",
+    "Подивись на заперечення 'n’est pressé' (ніхто не поспішає)!",
+    "У заперечному реченні з 'ne' для значення «жоден / ніхто (з них)» вживається 'aucun'. 'Chacun' і 'quelqu'un' не поєднуються з таким запереченням.",
+    "Із часткою 'n’' та одниною 'est' → aucun (A)."
+   ]
+  ]
+ },
+ "esp_gram_context": {
+  "subject": "spanish",
+  "section": "Gramática: Граматика в контексті",
+  "prompt_head": "Elige la opción correcta (A, B, C o D):\n",
+  "cases": [
+   [
+    "El museo _______ abierto todos los días de martes a domingo.",
+    [
+     "es",
+     "está",
+     "son",
+     "están"
+    ],
+    "B",
+    "Відчинено/зачинено — це тимчасовий стан або результат дії, а не постійна властивість.",
+    "Відмінність SER vs ESTAR: із дієприкметниками стану (abierto, cerrado, cansado, ocupado) завжди вживається ESTAR.",
+    "Однина ('el museo') + стан ('abierto') → está (B)."
+   ],
+   [
+    "Muchas gracias _______ tu ayuda con los ejercicios de matemáticas.",
+    [
+     "para",
+     "por",
+     "de",
+     "en"
+    ],
+    "B",
+    "Подяка за щось (причина подяки) — який прийменник обирається в іспанській?",
+    "POR vs PARA: POR виражає причину, обмін, подяку (gracias por..., pagar por...). PARA — мету, адресата, дедлайн.",
+    "Причина подяки ('gracias ...') завжди вимагає прийменник por (B)."
+   ],
+   [
+    "Ayer por la tarde mis amigos y yo _______ al cine del centro.",
+    [
+     "vamos",
+     "íbamos",
+     "fuimos",
+     "hemos ido"
+    ],
+    "C",
+    "Показник 'Ayer' (учора) — завершена одноразова дія в минулому.",
+    "З точним маркером завершеного минулого (ayer, el año pasado, en 2024) вживається Pretérito Indefinido (fuimos), а не Imperfecto чи Pretérito Perfecto.",
+    "Одноразова дія вчора → fuimos (C)."
+   ],
+   [
+    "Espero que _______ buen tiempo durante nuestro viaje a las montañas.",
+    [
+     "hace",
+     "haga",
+     "hará",
+     "hizo"
+    ],
+    "B",
+    "Дієслово сподівання/бажання ('Espero que...') вимагає умовного способу (Subjuntivo)!",
+    "Після дієслів бажання, сподівання та емоцій (espero que, quiero que, me alegra que) ставиться Presente de Subjuntivo. Для hacer → haga.",
+    "Після 'Espero que' потрібне Subjuntivo від hacer → haga (B)."
+   ]
+  ]
+ }
+}

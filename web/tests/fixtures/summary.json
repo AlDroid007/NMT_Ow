@@ -1,0 +1,2139 @@
+[
+ {
+  "block": {
+   "subject": "ukrmova",
+   "questions": [
+    "ukrmova_2026_19",
+    "ukrmova_2026_6",
+    "arch_ukr_2023_9",
+    "ukrmova_2026_16",
+    "ukrmova_2026_15",
+    "arch_ukr_2022_16",
+    "arch_ukr_2025_1"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "2": 0,
+    "3": 0,
+    "4": 1,
+    "5": 4,
+    "6": 1
+   },
+   "mistakes": [
+    2,
+    3
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrmova",
+   "name": "Українська мова",
+   "earned": 7,
+   "actual_max": 10,
+   "projected_raw": 32,
+   "official_max": 45,
+   "threshold": 8,
+   "nmt_200": 162,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Будова слова. Словотвір": 1,
+    "Морфологія": 1
+   }
+  },
+  "score": [
+   7,
+   10
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrmova",
+   "questions": [
+    "ukrmova_2026_29",
+    "arch_ukr_2022_9",
+    "ukrmova_2026_1",
+    "ukrmova_2026_5",
+    "ukrmova_2026_30",
+    "arch_ukr_2025_26",
+    "arch_ukr_2022_16"
+   ],
+   "answers": {},
+   "points": {
+    "0": 2,
+    "1": 1,
+    "2": 0,
+    "4": 2,
+    "5": 3,
+    "6": 0
+   },
+   "mistakes": [
+    0,
+    2,
+    4,
+    5,
+    6
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrmova",
+   "name": "Українська мова",
+   "earned": 8,
+   "actual_max": 19,
+   "projected_raw": 19,
+   "official_max": 45,
+   "threshold": 8,
+   "nmt_200": 143,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Синтаксис. Пунктуація": 2,
+    "Фонетика. Графіка. Орфоепія": 1,
+    "Лексикологія. Фразеологія": 2
+   }
+  },
+  "score": [
+   8,
+   19
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrmova",
+   "questions": [
+    "ukrmova_2026_7",
+    "arch_ukr_2025_4",
+    "ukrmova_2026_29",
+    "arch_ukr_2022_16"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 0,
+    "2": 4
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrmova",
+   "name": "Українська мова",
+   "earned": 5,
+   "actual_max": 10,
+   "projected_raw": 22,
+   "official_max": 45,
+   "threshold": 8,
+   "nmt_200": 146,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Орфографія": 1
+   }
+  },
+  "score": [
+   5,
+   10
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrmova",
+   "questions": [
+    "ukrmova_2026_15",
+    "arch_ukr_2023_9",
+    "ukrmova_2026_19"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 0
+   },
+   "mistakes": [
+    0,
+    1
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrmova",
+   "name": "Українська мова",
+   "earned": 0,
+   "actual_max": 3,
+   "projected_raw": 0,
+   "official_max": 45,
+   "threshold": 8,
+   "nmt_200": null,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Лексикологія. Фразеологія": 1,
+    "Будова слова. Словотвір": 1
+   }
+  },
+  "score": [
+   0,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "math",
+   "questions": [
+    "math_2026_3",
+    "arch_math_2024_9",
+    "math_2026_19",
+    "math_2026_9",
+    "arch_math_2025_3",
+    "arch_math_2025_11",
+    "math_2026_16"
+   ],
+   "answers": {},
+   "points": {
+    "2": 0,
+    "3": 1,
+    "4": 1,
+    "6": 3
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "math",
+   "name": "Математика",
+   "earned": 5,
+   "actual_max": 10,
+   "projected_raw": 16,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 148,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Функції": 1
+   }
+  },
+  "score": [
+   5,
+   10
+  ]
+ },
+ {
+  "block": {
+   "subject": "math",
+   "questions": [
+    "arch_math_2022_11",
+    "math_2026_1",
+    "math_2026_11",
+    "arch_math_2023_19"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 0,
+    "2": 1,
+    "3": 2
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "math",
+   "name": "Математика",
+   "earned": 4,
+   "actual_max": 5,
+   "projected_raw": 26,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 173,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Комбінаторика, ймовірність, статистика": 1
+   }
+  },
+  "score": [
+   4,
+   5
+  ]
+ },
+ {
+  "block": {
+   "subject": "math",
+   "questions": [
+    "arch_math_2025_4",
+    "math_2026_2",
+    "arch_math_2025_19",
+    "math_2026_1",
+    "arch_math_2023_19",
+    "arch_math_2022_11"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 0,
+    "5": 1
+   },
+   "mistakes": [
+    3
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "math",
+   "name": "Математика",
+   "earned": 5,
+   "actual_max": 8,
+   "projected_raw": 20,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 152,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Комбінаторика, ймовірність, статистика": 1
+   }
+  },
+  "score": [
+   5,
+   8
+  ]
+ },
+ {
+  "block": {
+   "subject": "math",
+   "questions": [
+    "math_2026_19",
+    "math_2026_16",
+    "math_2026_2",
+    "math_2026_7",
+    "arch_math_2025_7",
+    "math_2026_20",
+    "arch_math_2024_9",
+    "math_2026_9"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "5": 2,
+    "6": 1,
+    "7": 0
+   },
+   "mistakes": [
+    0,
+    3,
+    7
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "math",
+   "name": "Математика",
+   "earned": 5,
+   "actual_max": 12,
+   "projected_raw": 13,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 143,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Функції": 1,
+    "Комбінаторика, ймовірність, статистика": 1,
+    "Числа і вирази": 1
+   }
+  },
+  "score": [
+   5,
+   12
+  ]
+ },
+ {
+  "block": {
+   "subject": "history",
+   "questions": [
+    "arch_hist_2025_5",
+    "hist_2026_2",
+    "hist_2026_25",
+    "hist_2026_23"
+   ],
+   "answers": {},
+   "points": {
+    "1": 1,
+    "2": 3,
+    "3": 4
+   },
+   "mistakes": [],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "history",
+   "name": "Історія України",
+   "earned": 8,
+   "actual_max": 9,
+   "projected_raw": 48,
+   "official_max": 54,
+   "threshold": 9,
+   "nmt_200": 183,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {}
+  },
+  "score": [
+   8,
+   9
+  ]
+ },
+ {
+  "block": {
+   "subject": "history",
+   "questions": [
+    "hist_2026_24",
+    "hist_2026_23",
+    "arch_hist_2025_22",
+    "arch_hist_2025_1",
+    "arch_hist_2023_22"
+   ],
+   "answers": {},
+   "points": {
+    "0": 4,
+    "1": 3,
+    "2": 4,
+    "4": 4
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "history",
+   "name": "Історія України",
+   "earned": 15,
+   "actual_max": 17,
+   "projected_raw": 48,
+   "official_max": 54,
+   "threshold": 9,
+   "nmt_200": 183,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Україна в 1914–1945 рр.": 1
+   }
+  },
+  "score": [
+   15,
+   17
+  ]
+ },
+ {
+  "block": {
+   "subject": "history",
+   "questions": [
+    "arch_hist_2025_5",
+    "arch_hist_2025_17",
+    "arch_hist_2022_20",
+    "hist_2026_22",
+    "arch_hist_2025_1",
+    "hist_2026_4",
+    "hist_2026_30",
+    "arch_hist_2024_5"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 4,
+    "3": 3,
+    "6": 0,
+    "7": 1
+   },
+   "mistakes": [
+    3,
+    6
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "history",
+   "name": "Історія України",
+   "earned": 10,
+   "actual_max": 16,
+   "projected_raw": 34,
+   "official_max": 54,
+   "threshold": 9,
+   "nmt_200": 156,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Кінець XVIII – початок XX ст.": 1,
+    "Україна в 1945 р. – початок XXI ст.": 1
+   }
+  },
+  "score": [
+   10,
+   16
+  ]
+ },
+ {
+  "block": {
+   "subject": "history",
+   "questions": [
+    "hist_2026_1",
+    "arch_hist_2025_1",
+    "arch_hist_2025_10",
+    "arch_hist_2025_17",
+    "hist_2026_29",
+    "hist_2026_23",
+    "arch_hist_2023_22"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "3": 1,
+    "4": 3,
+    "5": 0,
+    "6": 4
+   },
+   "mistakes": [
+    5
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "history",
+   "name": "Історія України",
+   "earned": 10,
+   "actual_max": 15,
+   "projected_raw": 36,
+   "official_max": 54,
+   "threshold": 9,
+   "nmt_200": 160,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Україна в 1914–1945 рр.": 1
+   }
+  },
+  "score": [
+   10,
+   15
+  ]
+ },
+ {
+  "block": {
+   "subject": "english",
+   "questions": [
+    "arch_eng_2025_s1_28",
+    "eng_2026_demo_28",
+    "eng_2026_zvit_32"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 0,
+    "2": 0
+   },
+   "mistakes": [
+    0,
+    1,
+    2
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "english",
+   "name": "Англійська мова",
+   "earned": 0,
+   "actual_max": 3,
+   "projected_raw": 0,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": null,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Use of English: Граматика (Task 6)": 3
+   }
+  },
+  "score": [
+   0,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "english",
+   "questions": [
+    "arch_eng_2025_s1_24",
+    "arch_eng_2025_s1_23",
+    "arch_eng_2025_s1_31"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 0
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "english",
+   "name": "Англійська мова",
+   "earned": 2,
+   "actual_max": 3,
+   "projected_raw": 21,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 153,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Use of English: Граматика (Task 6)": 1
+   }
+  },
+  "score": [
+   2,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "english",
+   "questions": [
+    "eng_2026_s1_27",
+    "eng_2026_demo_31",
+    "eng_2026_s1_6",
+    "arch_eng_2023_s1_28",
+    "arch_eng_2025_s1_25",
+    "eng_2026_zvit_32",
+    "eng_2026_demo_4"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 0,
+    "5": 1,
+    "6": 1
+   },
+   "mistakes": [
+    4
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "english",
+   "name": "Англійська мова",
+   "earned": 6,
+   "actual_max": 7,
+   "projected_raw": 27,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 169,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Use of English: Лексика (Task 5)": 1
+   }
+  },
+  "score": [
+   6,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "english",
+   "questions": [
+    "arch_eng_2025_s1_25",
+    "arch_eng_2025_s1_31",
+    "arch_eng_2025_s2_31"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 0
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "english",
+   "name": "Англійська мова",
+   "earned": 2,
+   "actual_max": 3,
+   "projected_raw": 21,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 153,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Use of English: Граматика (Task 6)": 1
+   }
+  },
+  "score": [
+   2,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "german",
+   "questions": [
+    "arch_ger_2025_32",
+    "arch_ger_2025_30",
+    "ger_2026_29",
+    "arch_ger_2025_28",
+    "arch_ger_2025_31",
+    "arch_ger_2025_29",
+    "ger_2026_28"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 0,
+    "3": 1,
+    "5": 1,
+    "6": 1
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "german",
+   "name": "Німецька мова",
+   "earned": 4,
+   "actual_max": 7,
+   "projected_raw": 18,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 150,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Grammatik: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   4,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "german",
+   "questions": [
+    "ger_2026_28",
+    "arch_ger_2025_29",
+    "arch_ger_2025_30",
+    "arch_ger_2025_31"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "2": 1,
+    "3": 1
+   },
+   "mistakes": [
+    0
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "german",
+   "name": "Німецька мова",
+   "earned": 2,
+   "actual_max": 4,
+   "projected_raw": 16,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 148,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Grammatik: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   2,
+   4
+  ]
+ },
+ {
+  "block": {
+   "subject": "german",
+   "questions": [
+    "ger_2026_31",
+    "arch_ger_2025_31",
+    "arch_ger_2025_29"
+   ],
+   "answers": {},
+   "points": {
+    "1": 0,
+    "2": 1
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "german",
+   "name": "Німецька мова",
+   "earned": 1,
+   "actual_max": 3,
+   "projected_raw": 11,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 137,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Grammatik: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   1,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "german",
+   "questions": [
+    "ger_2026_29",
+    "arch_ger_2025_1",
+    "ger_2026_32",
+    "arch_ger_2025_28",
+    "arch_ger_2025_31",
+    "ger_2026_30",
+    "arch_ger_2025_29",
+    "ger_2026_31"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 0,
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "5": 1,
+    "7": 1
+   },
+   "mistakes": [
+    1,
+    3
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "german",
+   "name": "Німецька мова",
+   "earned": 5,
+   "actual_max": 8,
+   "projected_raw": 20,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 152,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Lesen: Загальне й детальне розуміння": 1,
+    "Grammatik: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   5,
+   8
+  ]
+ },
+ {
+  "block": {
+   "subject": "french",
+   "questions": [
+    "arch_fr_2025_32",
+    "arch_fr_2025_28",
+    "arch_fr_2025_31",
+    "arch_fr_2025_29",
+    "fr_2026_30",
+    "arch_fr_2025_30",
+    "arch_fr_2025_1"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "3": 0,
+    "4": 1,
+    "5": 1,
+    "6": 1
+   },
+   "mistakes": [
+    3
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "french",
+   "name": "Французька мова",
+   "earned": 4,
+   "actual_max": 7,
+   "projected_raw": 18,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 150,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Grammaire: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   4,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "french",
+   "questions": [
+    "arch_fr_2025_29",
+    "fr_2026_32",
+    "arch_fr_2025_28",
+    "fr_2026_28",
+    "fr_2026_30"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 0
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "french",
+   "name": "Французька мова",
+   "earned": 2,
+   "actual_max": 5,
+   "projected_raw": 13,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 143,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Grammaire: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   2,
+   5
+  ]
+ },
+ {
+  "block": {
+   "subject": "french",
+   "questions": [
+    "arch_fr_2025_29",
+    "arch_fr_2025_30",
+    "fr_2026_32",
+    "fr_2026_29",
+    "arch_fr_2025_31",
+    "arch_fr_2025_32"
+   ],
+   "answers": {},
+   "points": {
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "5": 1
+   },
+   "mistakes": [
+    3
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "french",
+   "name": "Французька мова",
+   "earned": 3,
+   "actual_max": 6,
+   "projected_raw": 16,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 148,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Grammaire: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   3,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "french",
+   "questions": [
+    "arch_fr_2025_1",
+    "fr_2026_32",
+    "arch_fr_2025_31"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 1,
+    "2": 1
+   },
+   "mistakes": [
+    0
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "french",
+   "name": "Французька мова",
+   "earned": 2,
+   "actual_max": 3,
+   "projected_raw": 21,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 153,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Compréhension écrite: Читання": 1
+   }
+  },
+  "score": [
+   2,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "spanish",
+   "questions": [
+    "arch_esp_2025_30",
+    "arch_esp_2025_28",
+    "arch_esp_2025_32",
+    "arch_esp_2025_31",
+    "arch_esp_2025_1",
+    "arch_esp_2025_29"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 1,
+    "3": 1,
+    "4": 1,
+    "5": 0
+   },
+   "mistakes": [
+    5
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "spanish",
+   "name": "Іспанська мова",
+   "earned": 5,
+   "actual_max": 6,
+   "projected_raw": 27,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 169,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Gramática: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   5,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "spanish",
+   "questions": [
+    "arch_esp_2025_30",
+    "arch_esp_2025_1",
+    "arch_esp_2025_29"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 0,
+    "2": 1
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "spanish",
+   "name": "Іспанська мова",
+   "earned": 2,
+   "actual_max": 3,
+   "projected_raw": 21,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 153,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Lectura: Розуміння тексту": 1
+   }
+  },
+  "score": [
+   2,
+   3
+  ]
+ },
+ {
+  "block": {
+   "subject": "spanish",
+   "questions": [
+    "arch_esp_2025_29",
+    "arch_esp_2025_32",
+    "arch_esp_2025_31",
+    "arch_esp_2025_28",
+    "arch_esp_2025_1",
+    "arch_esp_2025_30"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 0,
+    "3": 1,
+    "5": 1
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "spanish",
+   "name": "Іспанська мова",
+   "earned": 4,
+   "actual_max": 6,
+   "projected_raw": 21,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 153,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Gramática: Граматика в контексті": 1
+   }
+  },
+  "score": [
+   4,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "spanish",
+   "questions": [
+    "arch_esp_2025_32",
+    "arch_esp_2025_1",
+    "arch_esp_2025_29",
+    "arch_esp_2025_30",
+    "arch_esp_2025_31",
+    "arch_esp_2025_28"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 1,
+    "2": 0,
+    "3": 0,
+    "5": 0
+   },
+   "mistakes": [
+    2,
+    3,
+    5
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "spanish",
+   "name": "Іспанська мова",
+   "earned": 2,
+   "actual_max": 6,
+   "projected_raw": 11,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 137,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Gramática: Граматика в контексті": 3
+   }
+  },
+  "score": [
+   2,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrlit",
+   "questions": [
+    "ukrlit_2026_2",
+    "arch_lit_2025_5",
+    "ukrlit_2026_3",
+    "arch_lit_2024_3",
+    "arch_lit_2025_3",
+    "arch_lit_2025_11"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 1,
+    "3": 0,
+    "5": 1
+   },
+   "mistakes": [
+    0,
+    3
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrlit",
+   "name": "Українська література",
+   "earned": 2,
+   "actual_max": 6,
+   "projected_raw": 15,
+   "official_max": 45,
+   "threshold": 7,
+   "nmt_200": 136,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Давня українська література": 1,
+    "Теорія літератури та аналіз текстів": 1
+   }
+  },
+  "score": [
+   2,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrlit",
+   "questions": [
+    "arch_lit_2025_1",
+    "arch_lit_2025_26",
+    "ukrlit_2026_3"
+   ],
+   "answers": {},
+   "points": {
+    "1": 4,
+    "2": 1
+   },
+   "mistakes": [],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrlit",
+   "name": "Українська література",
+   "earned": 5,
+   "actual_max": 6,
+   "projected_raw": 38,
+   "official_max": 45,
+   "threshold": 7,
+   "nmt_200": 175,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {}
+  },
+  "score": [
+   5,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrlit",
+   "questions": [
+    "arch_lit_2024_3",
+    "arch_lit_2024_29",
+    "arch_lit_2025_3"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 0,
+    "2": 1
+   },
+   "mistakes": [
+    1
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrlit",
+   "name": "Українська література",
+   "earned": 2,
+   "actual_max": 6,
+   "projected_raw": 15,
+   "official_max": 45,
+   "threshold": 7,
+   "nmt_200": 136,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Теорія літератури та аналіз текстів": 1
+   }
+  },
+  "score": [
+   2,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "ukrlit",
+   "questions": [
+    "arch_lit_2025_1",
+    "arch_lit_2024_28",
+    "ukrlit_2026_12",
+    "arch_lit_2025_5"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "2": 1,
+    "3": 1
+   },
+   "mistakes": [],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "ukrlit",
+   "name": "Українська література",
+   "earned": 3,
+   "actual_max": 7,
+   "projected_raw": 19,
+   "official_max": 45,
+   "threshold": 7,
+   "nmt_200": 143,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {}
+  },
+  "score": [
+   3,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "biology",
+   "questions": [
+    "bio_2026_3",
+    "bio_2026_26",
+    "arch_bio_2025_2",
+    "arch_bio_2025_27",
+    "bio_2026_5",
+    "bio_2026_27"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "1": 4,
+    "3": 3,
+    "4": 1,
+    "5": 0
+   },
+   "mistakes": [
+    3,
+    5
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "biology",
+   "name": "Біологія",
+   "earned": 9,
+   "actual_max": 15,
+   "projected_raw": 28,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 154,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Біорізноманіття": 2
+   }
+  },
+  "score": [
+   9,
+   15
+  ]
+ },
+ {
+  "block": {
+   "subject": "biology",
+   "questions": [
+    "arch_bio_2025_17",
+    "bio_2026_3",
+    "arch_bio_2025_5",
+    "arch_bio_2025_4"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 0,
+    "2": 1
+   },
+   "mistakes": [
+    0,
+    1
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "biology",
+   "name": "Біологія",
+   "earned": 1,
+   "actual_max": 4,
+   "projected_raw": 12,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 128,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Організм людини як біологічна система": 1,
+    "Клітина. Хімічний склад і реалізація спадкової інформації": 1
+   }
+  },
+  "score": [
+   1,
+   4
+  ]
+ },
+ {
+  "block": {
+   "subject": "biology",
+   "questions": [
+    "bio_2026_27",
+    "arch_bio_2025_25",
+    "arch_bio_2025_5",
+    "arch_bio_2025_27",
+    "arch_bio_2025_17",
+    "bio_2026_3",
+    "bio_2026_26"
+   ],
+   "answers": {},
+   "points": {
+    "3": 2,
+    "4": 1,
+    "5": 1,
+    "6": 4
+   },
+   "mistakes": [
+    3
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "biology",
+   "name": "Біологія",
+   "earned": 8,
+   "actual_max": 19,
+   "projected_raw": 19,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 144,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Біорізноманіття": 1
+   }
+  },
+  "score": [
+   8,
+   19
+  ]
+ },
+ {
+  "block": {
+   "subject": "biology",
+   "questions": [
+    "arch_bio_2025_12",
+    "bio_2026_26",
+    "bio_2026_3",
+    "arch_bio_2025_2"
+   ],
+   "answers": {},
+   "points": {
+    "3": 0
+   },
+   "mistakes": [
+    3
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "biology",
+   "name": "Біологія",
+   "earned": 0,
+   "actual_max": 7,
+   "projected_raw": 0,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": null,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Клітина. Хімічний склад і реалізація спадкової інформації": 1
+   }
+  },
+  "score": [
+   0,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "physics",
+   "questions": [
+    "arch_phys_2025_17",
+    "arch_phys_2025_12",
+    "arch_phys_2025_5",
+    "phys_2026_13",
+    "arch_phys_2025_14"
+   ],
+   "answers": {},
+   "points": {
+    "0": 2,
+    "1": 1,
+    "2": 1
+   },
+   "mistakes": [],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "physics",
+   "name": "Фізика",
+   "earned": 4,
+   "actual_max": 8,
+   "projected_raw": 16,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 148,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {}
+  },
+  "score": [
+   4,
+   8
+  ]
+ },
+ {
+  "block": {
+   "subject": "physics",
+   "questions": [
+    "arch_phys_2025_14",
+    "arch_phys_2025_1",
+    "arch_phys_2025_12",
+    "arch_phys_2025_17",
+    "arch_phys_2025_20"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "2": 1,
+    "3": 2,
+    "4": 1
+   },
+   "mistakes": [
+    0,
+    4
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "physics",
+   "name": "Фізика",
+   "earned": 4,
+   "actual_max": 9,
+   "projected_raw": 14,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 145,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Електродинаміка": 1,
+    "Квантова фізика та теорія відносності": 1
+   }
+  },
+  "score": [
+   4,
+   9
+  ]
+ },
+ {
+  "block": {
+   "subject": "physics",
+   "questions": [
+    "arch_phys_2025_5",
+    "arch_phys_2025_7",
+    "phys_2026_13",
+    "arch_phys_2025_12",
+    "phys_2026_5",
+    "phys_2026_18"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 1,
+    "2": 1,
+    "3": 0,
+    "4": 1,
+    "5": 2
+   },
+   "mistakes": [
+    0,
+    3
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "physics",
+   "name": "Фізика",
+   "earned": 5,
+   "actual_max": 7,
+   "projected_raw": 23,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 164,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Молекулярна фізика та термодинаміка": 1,
+    "Квантова фізика та теорія відносності": 1
+   }
+  },
+  "score": [
+   5,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "physics",
+   "questions": [
+    "arch_phys_2025_5",
+    "arch_phys_2025_20",
+    "arch_phys_2025_17",
+    "arch_phys_2025_12"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 2,
+    "2": 2,
+    "3": 1
+   },
+   "mistakes": [
+    0
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "physics",
+   "name": "Фізика",
+   "earned": 5,
+   "actual_max": 6,
+   "projected_raw": 27,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 176,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Молекулярна фізика та термодинаміка": 1
+   }
+  },
+  "score": [
+   5,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "chemistry",
+   "questions": [
+    "arch_chem_2025_13",
+    "chem_2026_1",
+    "chem_2026_19",
+    "chem_2026_10"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 0,
+    "2": 3,
+    "3": 0
+   },
+   "mistakes": [
+    0,
+    1,
+    3
+   ],
+   "drills_done": 1,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "chemistry",
+   "name": "Хімія",
+   "earned": 3,
+   "actual_max": 6,
+   "projected_raw": 16,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 148,
+   "is_full": false,
+   "drills_done": 1,
+   "weak_sections": {
+    "Неорганічна хімія": 2,
+    "Загальна хімія": 1
+   }
+  },
+  "score": [
+   3,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "chemistry",
+   "questions": [
+    "chem_2026_14",
+    "arch_chem_2025_1",
+    "chem_2026_22",
+    "chem_2026_23",
+    "arch_chem_2025_16"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 0,
+    "2": 2,
+    "3": 0,
+    "4": 1
+   },
+   "mistakes": [
+    0,
+    1,
+    3
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "chemistry",
+   "name": "Хімія",
+   "earned": 3,
+   "actual_max": 7,
+   "projected_raw": 14,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 145,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Органічна хімія": 1,
+    "Загальна хімія": 1,
+    "Обчислення в хімії": 1
+   }
+  },
+  "score": [
+   3,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "chemistry",
+   "questions": [
+    "arch_chem_2025_26",
+    "chem_2026_22",
+    "arch_chem_2025_13"
+   ],
+   "answers": {},
+   "points": {
+    "0": 2,
+    "1": 2,
+    "2": 0
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "chemistry",
+   "name": "Хімія",
+   "earned": 4,
+   "actual_max": 5,
+   "projected_raw": 26,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 173,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Неорганічна хімія": 1
+   }
+  },
+  "score": [
+   4,
+   5
+  ]
+ },
+ {
+  "block": {
+   "subject": "chemistry",
+   "questions": [
+    "arch_chem_2025_26",
+    "arch_chem_2025_27",
+    "arch_chem_2025_25"
+   ],
+   "answers": {},
+   "points": {
+    "0": 2,
+    "1": 2,
+    "2": 2
+   },
+   "mistakes": [],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "chemistry",
+   "name": "Хімія",
+   "earned": 6,
+   "actual_max": 6,
+   "projected_raw": 32,
+   "official_max": 32,
+   "threshold": 5,
+   "nmt_200": 200,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {}
+  },
+  "score": [
+   6,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "geography",
+   "questions": [
+    "geo_2026_30",
+    "arch_geo_2025_22",
+    "geo_2026_3"
+   ],
+   "answers": {},
+   "points": {
+    "0": 3,
+    "1": 2,
+    "2": 0
+   },
+   "mistakes": [
+    2
+   ],
+   "drills_done": 3,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "geography",
+   "name": "Географія",
+   "earned": 5,
+   "actual_max": 6,
+   "projected_raw": 38,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 175,
+   "is_full": false,
+   "drills_done": 3,
+   "weak_sections": {
+    "Фізична географія України": 1
+   }
+  },
+  "score": [
+   5,
+   6
+  ]
+ },
+ {
+  "block": {
+   "subject": "geography",
+   "questions": [
+    "geo_2026_24",
+    "geo_2026_30",
+    "geo_2026_3",
+    "arch_geo_2025_17"
+   ],
+   "answers": {},
+   "points": {
+    "1": 3,
+    "2": 1,
+    "3": 1
+   },
+   "mistakes": [],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "geography",
+   "name": "Географія",
+   "earned": 5,
+   "actual_max": 7,
+   "projected_raw": 33,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 164,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {}
+  },
+  "score": [
+   5,
+   7
+  ]
+ },
+ {
+  "block": {
+   "subject": "geography",
+   "questions": [
+    "geo_2026_23",
+    "arch_geo_2025_1",
+    "geo_2026_1",
+    "arch_geo_2025_5",
+    "geo_2026_24",
+    "geo_2026_3"
+   ],
+   "answers": {},
+   "points": {
+    "0": 0,
+    "1": 0,
+    "2": 1,
+    "3": 0,
+    "4": 2,
+    "5": 1
+   },
+   "mistakes": [
+    0,
+    1,
+    3
+   ],
+   "drills_done": 0,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "geography",
+   "name": "Географія",
+   "earned": 4,
+   "actual_max": 8,
+   "projected_raw": 23,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 148,
+   "is_full": false,
+   "drills_done": 0,
+   "weak_sections": {
+    "Загальна географія та топографія": 2,
+    "Україна і світове господарство. Регіони": 1
+   }
+  },
+  "score": [
+   4,
+   8
+  ]
+ },
+ {
+  "block": {
+   "subject": "geography",
+   "questions": [
+    "arch_geo_2025_23",
+    "geo_2026_30",
+    "geo_2026_1",
+    "geo_2026_24",
+    "geo_2026_3",
+    "arch_geo_2025_5",
+    "arch_geo_2025_17"
+   ],
+   "answers": {},
+   "points": {
+    "0": 1,
+    "2": 0,
+    "4": 1,
+    "5": 1
+   },
+   "mistakes": [
+    0,
+    2
+   ],
+   "drills_done": 2,
+   "answer_log": {},
+   "hint_log": []
+  },
+  "summary": {
+   "subject": "geography",
+   "name": "Географія",
+   "earned": 3,
+   "actual_max": 11,
+   "projected_raw": 13,
+   "official_max": 46,
+   "threshold": 7,
+   "nmt_200": 131,
+   "is_full": false,
+   "drills_done": 2,
+   "weak_sections": {
+    "Загальна географія та топографія": 1,
+    "Фізична географія України": 1
+   }
+  },
+  "score": [
+   3,
+   11
+  ]
+ }
+]
