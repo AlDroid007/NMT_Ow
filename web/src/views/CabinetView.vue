@@ -33,8 +33,14 @@ const worst = computed(() => Math.max(1, ...topics.value.map((t) => t.mistakes))
 const rows = computed(() => history(results.value, HISTORY_LIMIT))
 
 const chartSubject = ref<string | null>(null)
+const userPicked = ref(false)
+function pick(sid: string) {
+  userPicked.value = true
+  chartSubject.value = sid
+}
+// Until the student picks a subject, follow the data: history arrives after the first render.
 watch(stats, (st) => {
-  if (!chartSubject.value || !subjects.value.includes(chartSubject.value)) {
+  if (!userPicked.value || !chartSubject.value || !subjects.value.includes(chartSubject.value)) {
     const withData = st.filter((s) => s.sessions).map((s) => s.subject)
     chartSubject.value = (withData.length ? withData : subjects.value)[0] ?? null
   }
@@ -124,14 +130,14 @@ function openReport(id: string | number | null) {
         <section v-if="stats.length" class="nmt-card">
           <div class="head"><h2>📚 Мої предмети</h2><span class="hint">Рівень — середній бал НМТ за останні 3 тренування</span></div>
           <div class="grid">
-            <SubjectStatCard v-for="st in stats" :key="st.subject" :stats="st" :selected="st.subject === chartSubject" @select="chartSubject = $event" />
+            <SubjectStatCard v-for="st in stats" :key="st.subject" :stats="st" :selected="st.subject === chartSubject" @select="pick" />
           </div>
         </section>
 
         <section v-if="subjects.length" class="nmt-card">
           <div class="head"><h2>📈 Прогрес</h2><span class="hint">Бал НМТ (100–200) у кожному тренуванні; пунктир — твоя ціль</span></div>
           <div class="tabs">
-            <button v-for="sid in subjects" :key="sid" type="button" :class="{ on: sid === chartSubject }" @click="chartSubject = sid">
+            <button v-for="sid in subjects" :key="sid" type="button" :class="{ on: sid === chartSubject }" @click="pick(sid)">
               {{ SUBJECTS_CONFIG[sid].name }}
             </button>
           </div>

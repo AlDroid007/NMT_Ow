@@ -32,7 +32,8 @@ function sameLabel(a: string, b: string, equiv: Record<string, string>): boolean
 
 /** True when the student has not chosen or typed anything yet. */
 export function isEmptyAnswer(ans: unknown): boolean {
-  if (ans === '' || (Array.isArray(ans) && ans.length === 0)) return true
+  // null: nothing chosen yet on the web (the desktop widgets always return "" instead)
+  if (ans === null || ans === undefined || ans === '' || (Array.isArray(ans) && ans.length === 0)) return true
   if (ans && typeof ans === 'object' && !Array.isArray(ans)) return !Object.values(ans).some((v) => !!v)
   return false
 }

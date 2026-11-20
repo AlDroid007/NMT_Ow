@@ -3,7 +3,7 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { SUBJECT_GENERATORS, SUBJECTS_CONFIG, SUBJECTS_ORDER } from '../src/core/config'
 import {
-  buildMistakeDrillPlan, buildSectionPlan, evaluateAnswer, generateIdenticalDrill, generateTestForSubject,
+  buildMistakeDrillPlan, buildSectionPlan, evaluateAnswer, generateIdenticalDrill, generateTestForSubject, isEmptyAnswer,
   newBlock, subjectSections,
 } from '../src/core/engine'
 import { generatorCount, getGenerator } from '../src/core/generators'
@@ -70,6 +70,11 @@ describe('test assembly', () => {
     }
     const bankTask: Task = { subject: 'history', qtype: 'single', prompt: 'x' }
     expect(generateIdenticalDrill(bankTask).subject).toBe('history')
+  })
+
+  it('nothing chosen counts as no answer', () => {
+    for (const a of [null, undefined, '', [], {}, { 1: '', 2: '' }]) expect(isEmptyAnswer(a), JSON.stringify(a)).toBe(true)
+    for (const a of ['А', ['1'], { 1: 'Б' }]) expect(isEmptyAnswer(a)).toBe(false)
   })
 
   it('mistake drill has one task per mistake', () => {
