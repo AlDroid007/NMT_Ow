@@ -137,6 +137,12 @@ def fill_cloud_dialog(app, root, email, code):
     entry = next(w for w in win.winfo_children()[0].winfo_children()[0].winfo_children() if isinstance(w, tk.Entry))
     entry.delete(0, "end")
     entry.insert(0, email)
+    win._privacy_var.set(False)
+    entry.event_generate("<Return>")  # without consent the code must not be sent
+    root.update()
+    if "Ми надіслали код" in "".join(w.cget("text") for w in entry.master.winfo_children() if isinstance(w, tk.Label)):
+        raise AssertionError("code sent without accepting the privacy policy")
+    win._privacy_var.set(True)
     entry.event_generate("<Return>")
     pump(root, lambda: "Ми надіслали код" in "".join(
         w.cget("text") for w in entry.master.winfo_children() if isinstance(w, tk.Label)))

@@ -296,3 +296,7 @@ def score_to_nmt200(subject_id, raw_score):
 # Students only use the built-in tasks: the «own task bank (.json)» import/template UI is hidden.
 # The code stays; set to True to show it again.
 CUSTOM_BANKS_UI = False
+
+# Privacy policy (site/privacy/index.html, published by .github/workflows/pages.yml).
+# The cloud sign-in dialog asks to accept it; «Довідка» opens it.
+PRIVACY_URL = "https://aldroid007.github.io/NMT_Ow/privacy/"
