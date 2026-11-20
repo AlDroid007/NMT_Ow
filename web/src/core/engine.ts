@@ -3,7 +3,7 @@
 
 import { BANK, SUBJECTS_CONFIG, scoreToNmt200 } from './config'
 import { generatorsForSubject, getGenerator, hasGenerator } from './generators'
-import { choice, floorDiv, pyFloat, pyLen, pyRound, pyStr, randint, shuffle, sortedStrings } from './py'
+import { choice, floorDiv, pyFloat, pyRound, pyStr, randint, shuffle, sortedStrings } from './py'
 import type { AnswerRecord, Block, Plan, SessionResult, StudentAnswer, SubjectSummary, Task } from './types'
 
 type Bank = Record<string, Task[]>
@@ -392,17 +392,21 @@ export function formatDateTime(d: Date): string {
 }
 
 export function formatResultsReport(plan: Plan, now: Date = new Date()): string {
+  return formatSummariesReport(plan.map(computeSubjectSummary), now)
+}
+
+/** The same report from stored subject summaries (the web rebuilds old reports from the cloud history). */
+export function formatSummariesReport(summaries: SubjectSummary[], when: Date = new Date()): string {
   const bar = '='.repeat(64)
-  const lines = [bar, `ЗВІТ ЗА РЕЗУЛЬТАТАМИ ТРЕНУВАННЯ НМТ (${formatDateTime(now)})`, bar, '']
-  for (const block of plan) {
-    const s = computeSubjectSummary(block)
-    const nmtStr = s.nmt_200 !== null ? `${s.nmt_200} балів` : `Не складено (< ${s.threshold})`
+  const lines = [bar, `ЗВІТ ЗА РЕЗУЛЬТАТАМИ ТРЕНУВАННЯ НМТ (${formatDateTime(when)})`, bar, '']
+  for (const s of summaries) {
+    const nmtStr = s.nmt_200 !== null && s.nmt_200 !== undefined ? `${s.nmt_200} балів` : `Не складено (< ${s.threshold})`
     const modeNote = s.is_full ? 'точний формат' : `прогноз із ${s.actual_max} макс. балів`
     lines.push(`Предмет: ${s.name}`)
     lines.push(`  Набрано балів: ${s.earned} із ${s.actual_max} (${modeNote})`)
     lines.push(`  Оцінка за шкалою НМТ 100–200: ${nmtStr}`)
     lines.push(`  Опрацьовано ідентичних прикладів із репетитором: ${s.drills_done}`)
-    const weak = Object.entries(s.weak_sections)
+    const weak = Object.entries(s.weak_sections ?? {})
     if (weak.length) {
       lines.push('  Теми для повторення:')
       for (const [sec, cnt] of weak) lines.push(`    • ${sec} (помилок: ${cnt})`)
@@ -413,5 +417,3 @@ export function formatResultsReport(plan: Plan, now: Date = new Date()): string 
   }
   return lines.join('\n')
 }
-
-export { pyLen }
