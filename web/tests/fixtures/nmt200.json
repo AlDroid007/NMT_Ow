@@ -1,0 +1,2602 @@
+[
+ {
+  "subject": "ukrmova",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 5,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 6,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 7,
+  "expected": null
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 8,
+  "expected": 100
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 9,
+  "expected": 105
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 10,
+  "expected": 110
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 11,
+  "expected": 120
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 12,
+  "expected": 125
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 13,
+  "expected": 130
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 14,
+  "expected": 134
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 15,
+  "expected": 136
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 16,
+  "expected": 138
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 17,
+  "expected": 140
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 18,
+  "expected": 142
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 19,
+  "expected": 143
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 20,
+  "expected": 144
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 21,
+  "expected": 145
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 22,
+  "expected": 146
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 23,
+  "expected": 148
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 24,
+  "expected": 149
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 25,
+  "expected": 150
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 26,
+  "expected": 152
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 27,
+  "expected": 154
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 28,
+  "expected": 156
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 29,
+  "expected": 157
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 30,
+  "expected": 159
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 31,
+  "expected": 160
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 32,
+  "expected": 162
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 33,
+  "expected": 163
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 34,
+  "expected": 165
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 35,
+  "expected": 167
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 36,
+  "expected": 170
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 37,
+  "expected": 172
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 38,
+  "expected": 175
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 39,
+  "expected": 177
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 40,
+  "expected": 180
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 41,
+  "expected": 183
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 42,
+  "expected": 186
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 43,
+  "expected": 191
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 44,
+  "expected": 195
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 45,
+  "expected": 200
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 46,
+  "expected": 200
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 47,
+  "expected": 200
+ },
+ {
+  "subject": "ukrmova",
+  "raw": 10.5,
+  "expected": 110
+ },
+ {
+  "subject": "math",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "math",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "math",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "math",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "math",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "math",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "math",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "math",
+  "raw": 6,
+  "expected": 108
+ },
+ {
+  "subject": "math",
+  "raw": 7,
+  "expected": 115
+ },
+ {
+  "subject": "math",
+  "raw": 8,
+  "expected": 123
+ },
+ {
+  "subject": "math",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "math",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "math",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "math",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "math",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "math",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "math",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "math",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "math",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "math",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "math",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "math",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "math",
+  "raw": 21,
+  "expected": 155
+ },
+ {
+  "subject": "math",
+  "raw": 22,
+  "expected": 159
+ },
+ {
+  "subject": "math",
+  "raw": 23,
+  "expected": 163
+ },
+ {
+  "subject": "math",
+  "raw": 24,
+  "expected": 167
+ },
+ {
+  "subject": "math",
+  "raw": 25,
+  "expected": 170
+ },
+ {
+  "subject": "math",
+  "raw": 26,
+  "expected": 173
+ },
+ {
+  "subject": "math",
+  "raw": 27,
+  "expected": 176
+ },
+ {
+  "subject": "math",
+  "raw": 28,
+  "expected": 180
+ },
+ {
+  "subject": "math",
+  "raw": 29,
+  "expected": 184
+ },
+ {
+  "subject": "math",
+  "raw": 30,
+  "expected": 189
+ },
+ {
+  "subject": "math",
+  "raw": 31,
+  "expected": 194
+ },
+ {
+  "subject": "math",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "math",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "math",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "math",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "history",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 5,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 6,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 7,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 8,
+  "expected": null
+ },
+ {
+  "subject": "history",
+  "raw": 9,
+  "expected": 100
+ },
+ {
+  "subject": "history",
+  "raw": 10,
+  "expected": 105
+ },
+ {
+  "subject": "history",
+  "raw": 11,
+  "expected": 110
+ },
+ {
+  "subject": "history",
+  "raw": 12,
+  "expected": 115
+ },
+ {
+  "subject": "history",
+  "raw": 13,
+  "expected": 120
+ },
+ {
+  "subject": "history",
+  "raw": 14,
+  "expected": 125
+ },
+ {
+  "subject": "history",
+  "raw": 15,
+  "expected": 130
+ },
+ {
+  "subject": "history",
+  "raw": 16,
+  "expected": 132
+ },
+ {
+  "subject": "history",
+  "raw": 17,
+  "expected": 134
+ },
+ {
+  "subject": "history",
+  "raw": 18,
+  "expected": 136
+ },
+ {
+  "subject": "history",
+  "raw": 19,
+  "expected": 138
+ },
+ {
+  "subject": "history",
+  "raw": 20,
+  "expected": 140
+ },
+ {
+  "subject": "history",
+  "raw": 21,
+  "expected": 141
+ },
+ {
+  "subject": "history",
+  "raw": 22,
+  "expected": 142
+ },
+ {
+  "subject": "history",
+  "raw": 23,
+  "expected": 143
+ },
+ {
+  "subject": "history",
+  "raw": 24,
+  "expected": 144
+ },
+ {
+  "subject": "history",
+  "raw": 25,
+  "expected": 145
+ },
+ {
+  "subject": "history",
+  "raw": 26,
+  "expected": 146
+ },
+ {
+  "subject": "history",
+  "raw": 27,
+  "expected": 147
+ },
+ {
+  "subject": "history",
+  "raw": 28,
+  "expected": 148
+ },
+ {
+  "subject": "history",
+  "raw": 29,
+  "expected": 149
+ },
+ {
+  "subject": "history",
+  "raw": 30,
+  "expected": 150
+ },
+ {
+  "subject": "history",
+  "raw": 31,
+  "expected": 151
+ },
+ {
+  "subject": "history",
+  "raw": 32,
+  "expected": 152
+ },
+ {
+  "subject": "history",
+  "raw": 33,
+  "expected": 154
+ },
+ {
+  "subject": "history",
+  "raw": 34,
+  "expected": 156
+ },
+ {
+  "subject": "history",
+  "raw": 35,
+  "expected": 158
+ },
+ {
+  "subject": "history",
+  "raw": 36,
+  "expected": 160
+ },
+ {
+  "subject": "history",
+  "raw": 37,
+  "expected": 163
+ },
+ {
+  "subject": "history",
+  "raw": 38,
+  "expected": 166
+ },
+ {
+  "subject": "history",
+  "raw": 39,
+  "expected": 168
+ },
+ {
+  "subject": "history",
+  "raw": 40,
+  "expected": 169
+ },
+ {
+  "subject": "history",
+  "raw": 41,
+  "expected": 170
+ },
+ {
+  "subject": "history",
+  "raw": 42,
+  "expected": 172
+ },
+ {
+  "subject": "history",
+  "raw": 43,
+  "expected": 173
+ },
+ {
+  "subject": "history",
+  "raw": 44,
+  "expected": 175
+ },
+ {
+  "subject": "history",
+  "raw": 45,
+  "expected": 177
+ },
+ {
+  "subject": "history",
+  "raw": 46,
+  "expected": 179
+ },
+ {
+  "subject": "history",
+  "raw": 47,
+  "expected": 181
+ },
+ {
+  "subject": "history",
+  "raw": 48,
+  "expected": 183
+ },
+ {
+  "subject": "history",
+  "raw": 49,
+  "expected": 185
+ },
+ {
+  "subject": "history",
+  "raw": 50,
+  "expected": 188
+ },
+ {
+  "subject": "history",
+  "raw": 51,
+  "expected": 191
+ },
+ {
+  "subject": "history",
+  "raw": 52,
+  "expected": 194
+ },
+ {
+  "subject": "history",
+  "raw": 53,
+  "expected": 197
+ },
+ {
+  "subject": "history",
+  "raw": 54,
+  "expected": 200
+ },
+ {
+  "subject": "history",
+  "raw": 55,
+  "expected": 200
+ },
+ {
+  "subject": "history",
+  "raw": 56,
+  "expected": 200
+ },
+ {
+  "subject": "history",
+  "raw": 10.5,
+  "expected": 105
+ },
+ {
+  "subject": "english",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "english",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "english",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "english",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "english",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "english",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "english",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "english",
+  "raw": 6,
+  "expected": 109
+ },
+ {
+  "subject": "english",
+  "raw": 7,
+  "expected": 118
+ },
+ {
+  "subject": "english",
+  "raw": 8,
+  "expected": 125
+ },
+ {
+  "subject": "english",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "english",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "english",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "english",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "english",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "english",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "english",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "english",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "english",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "english",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "english",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "english",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "english",
+  "raw": 21,
+  "expected": 153
+ },
+ {
+  "subject": "english",
+  "raw": 22,
+  "expected": 155
+ },
+ {
+  "subject": "english",
+  "raw": 23,
+  "expected": 157
+ },
+ {
+  "subject": "english",
+  "raw": 24,
+  "expected": 159
+ },
+ {
+  "subject": "english",
+  "raw": 25,
+  "expected": 162
+ },
+ {
+  "subject": "english",
+  "raw": 26,
+  "expected": 166
+ },
+ {
+  "subject": "english",
+  "raw": 27,
+  "expected": 169
+ },
+ {
+  "subject": "english",
+  "raw": 28,
+  "expected": 173
+ },
+ {
+  "subject": "english",
+  "raw": 29,
+  "expected": 179
+ },
+ {
+  "subject": "english",
+  "raw": 30,
+  "expected": 185
+ },
+ {
+  "subject": "english",
+  "raw": 31,
+  "expected": 191
+ },
+ {
+  "subject": "english",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "english",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "english",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "english",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "german",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "german",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "german",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "german",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "german",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "german",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "german",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "german",
+  "raw": 6,
+  "expected": 109
+ },
+ {
+  "subject": "german",
+  "raw": 7,
+  "expected": 118
+ },
+ {
+  "subject": "german",
+  "raw": 8,
+  "expected": 125
+ },
+ {
+  "subject": "german",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "german",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "german",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "german",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "german",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "german",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "german",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "german",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "german",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "german",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "german",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "german",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "german",
+  "raw": 21,
+  "expected": 153
+ },
+ {
+  "subject": "german",
+  "raw": 22,
+  "expected": 155
+ },
+ {
+  "subject": "german",
+  "raw": 23,
+  "expected": 157
+ },
+ {
+  "subject": "german",
+  "raw": 24,
+  "expected": 159
+ },
+ {
+  "subject": "german",
+  "raw": 25,
+  "expected": 162
+ },
+ {
+  "subject": "german",
+  "raw": 26,
+  "expected": 166
+ },
+ {
+  "subject": "german",
+  "raw": 27,
+  "expected": 169
+ },
+ {
+  "subject": "german",
+  "raw": 28,
+  "expected": 173
+ },
+ {
+  "subject": "german",
+  "raw": 29,
+  "expected": 179
+ },
+ {
+  "subject": "german",
+  "raw": 30,
+  "expected": 185
+ },
+ {
+  "subject": "german",
+  "raw": 31,
+  "expected": 191
+ },
+ {
+  "subject": "german",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "german",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "german",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "german",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "french",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "french",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "french",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "french",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "french",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "french",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "french",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "french",
+  "raw": 6,
+  "expected": 109
+ },
+ {
+  "subject": "french",
+  "raw": 7,
+  "expected": 118
+ },
+ {
+  "subject": "french",
+  "raw": 8,
+  "expected": 125
+ },
+ {
+  "subject": "french",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "french",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "french",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "french",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "french",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "french",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "french",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "french",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "french",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "french",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "french",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "french",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "french",
+  "raw": 21,
+  "expected": 153
+ },
+ {
+  "subject": "french",
+  "raw": 22,
+  "expected": 155
+ },
+ {
+  "subject": "french",
+  "raw": 23,
+  "expected": 157
+ },
+ {
+  "subject": "french",
+  "raw": 24,
+  "expected": 159
+ },
+ {
+  "subject": "french",
+  "raw": 25,
+  "expected": 162
+ },
+ {
+  "subject": "french",
+  "raw": 26,
+  "expected": 166
+ },
+ {
+  "subject": "french",
+  "raw": 27,
+  "expected": 169
+ },
+ {
+  "subject": "french",
+  "raw": 28,
+  "expected": 173
+ },
+ {
+  "subject": "french",
+  "raw": 29,
+  "expected": 179
+ },
+ {
+  "subject": "french",
+  "raw": 30,
+  "expected": 185
+ },
+ {
+  "subject": "french",
+  "raw": 31,
+  "expected": 191
+ },
+ {
+  "subject": "french",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "french",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "french",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "french",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "spanish",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "spanish",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "spanish",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "spanish",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "spanish",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "spanish",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "spanish",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "spanish",
+  "raw": 6,
+  "expected": 109
+ },
+ {
+  "subject": "spanish",
+  "raw": 7,
+  "expected": 118
+ },
+ {
+  "subject": "spanish",
+  "raw": 8,
+  "expected": 125
+ },
+ {
+  "subject": "spanish",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "spanish",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "spanish",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "spanish",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "spanish",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "spanish",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "spanish",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "spanish",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "spanish",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "spanish",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "spanish",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "spanish",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "spanish",
+  "raw": 21,
+  "expected": 153
+ },
+ {
+  "subject": "spanish",
+  "raw": 22,
+  "expected": 155
+ },
+ {
+  "subject": "spanish",
+  "raw": 23,
+  "expected": 157
+ },
+ {
+  "subject": "spanish",
+  "raw": 24,
+  "expected": 159
+ },
+ {
+  "subject": "spanish",
+  "raw": 25,
+  "expected": 162
+ },
+ {
+  "subject": "spanish",
+  "raw": 26,
+  "expected": 166
+ },
+ {
+  "subject": "spanish",
+  "raw": 27,
+  "expected": 169
+ },
+ {
+  "subject": "spanish",
+  "raw": 28,
+  "expected": 173
+ },
+ {
+  "subject": "spanish",
+  "raw": 29,
+  "expected": 179
+ },
+ {
+  "subject": "spanish",
+  "raw": 30,
+  "expected": 185
+ },
+ {
+  "subject": "spanish",
+  "raw": 31,
+  "expected": 191
+ },
+ {
+  "subject": "spanish",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "spanish",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "spanish",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "spanish",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "ukrlit",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 5,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 6,
+  "expected": null
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 7,
+  "expected": 100
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 8,
+  "expected": 105
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 9,
+  "expected": 110
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 10,
+  "expected": 115
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 11,
+  "expected": 120
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 12,
+  "expected": 125
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 13,
+  "expected": 131
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 14,
+  "expected": 134
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 15,
+  "expected": 136
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 16,
+  "expected": 138
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 17,
+  "expected": 140
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 18,
+  "expected": 142
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 19,
+  "expected": 143
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 20,
+  "expected": 144
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 21,
+  "expected": 145
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 22,
+  "expected": 146
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 23,
+  "expected": 148
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 24,
+  "expected": 149
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 25,
+  "expected": 150
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 26,
+  "expected": 152
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 27,
+  "expected": 154
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 28,
+  "expected": 156
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 29,
+  "expected": 157
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 30,
+  "expected": 159
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 31,
+  "expected": 160
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 32,
+  "expected": 162
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 33,
+  "expected": 163
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 34,
+  "expected": 165
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 35,
+  "expected": 167
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 36,
+  "expected": 170
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 37,
+  "expected": 172
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 38,
+  "expected": 175
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 39,
+  "expected": 177
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 40,
+  "expected": 180
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 41,
+  "expected": 183
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 42,
+  "expected": 186
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 43,
+  "expected": 191
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 44,
+  "expected": 195
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 45,
+  "expected": 200
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 46,
+  "expected": 200
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 47,
+  "expected": 200
+ },
+ {
+  "subject": "ukrlit",
+  "raw": 10.5,
+  "expected": 115
+ },
+ {
+  "subject": "biology",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 5,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 6,
+  "expected": null
+ },
+ {
+  "subject": "biology",
+  "raw": 7,
+  "expected": 100
+ },
+ {
+  "subject": "biology",
+  "raw": 8,
+  "expected": 107
+ },
+ {
+  "subject": "biology",
+  "raw": 9,
+  "expected": 114
+ },
+ {
+  "subject": "biology",
+  "raw": 10,
+  "expected": 119
+ },
+ {
+  "subject": "biology",
+  "raw": 11,
+  "expected": 124
+ },
+ {
+  "subject": "biology",
+  "raw": 12,
+  "expected": 128
+ },
+ {
+  "subject": "biology",
+  "raw": 13,
+  "expected": 131
+ },
+ {
+  "subject": "biology",
+  "raw": 14,
+  "expected": 134
+ },
+ {
+  "subject": "biology",
+  "raw": 15,
+  "expected": 136
+ },
+ {
+  "subject": "biology",
+  "raw": 16,
+  "expected": 138
+ },
+ {
+  "subject": "biology",
+  "raw": 17,
+  "expected": 140
+ },
+ {
+  "subject": "biology",
+  "raw": 18,
+  "expected": 142
+ },
+ {
+  "subject": "biology",
+  "raw": 19,
+  "expected": 144
+ },
+ {
+  "subject": "biology",
+  "raw": 20,
+  "expected": 145
+ },
+ {
+  "subject": "biology",
+  "raw": 21,
+  "expected": 146
+ },
+ {
+  "subject": "biology",
+  "raw": 22,
+  "expected": 147
+ },
+ {
+  "subject": "biology",
+  "raw": 23,
+  "expected": 148
+ },
+ {
+  "subject": "biology",
+  "raw": 24,
+  "expected": 149
+ },
+ {
+  "subject": "biology",
+  "raw": 25,
+  "expected": 150
+ },
+ {
+  "subject": "biology",
+  "raw": 26,
+  "expected": 151
+ },
+ {
+  "subject": "biology",
+  "raw": 27,
+  "expected": 152
+ },
+ {
+  "subject": "biology",
+  "raw": 28,
+  "expected": 154
+ },
+ {
+  "subject": "biology",
+  "raw": 29,
+  "expected": 156
+ },
+ {
+  "subject": "biology",
+  "raw": 30,
+  "expected": 158
+ },
+ {
+  "subject": "biology",
+  "raw": 31,
+  "expected": 160
+ },
+ {
+  "subject": "biology",
+  "raw": 32,
+  "expected": 162
+ },
+ {
+  "subject": "biology",
+  "raw": 33,
+  "expected": 164
+ },
+ {
+  "subject": "biology",
+  "raw": 34,
+  "expected": 166
+ },
+ {
+  "subject": "biology",
+  "raw": 35,
+  "expected": 168
+ },
+ {
+  "subject": "biology",
+  "raw": 36,
+  "expected": 170
+ },
+ {
+  "subject": "biology",
+  "raw": 37,
+  "expected": 172
+ },
+ {
+  "subject": "biology",
+  "raw": 38,
+  "expected": 175
+ },
+ {
+  "subject": "biology",
+  "raw": 39,
+  "expected": 177
+ },
+ {
+  "subject": "biology",
+  "raw": 40,
+  "expected": 179
+ },
+ {
+  "subject": "biology",
+  "raw": 41,
+  "expected": 182
+ },
+ {
+  "subject": "biology",
+  "raw": 42,
+  "expected": 185
+ },
+ {
+  "subject": "biology",
+  "raw": 43,
+  "expected": 188
+ },
+ {
+  "subject": "biology",
+  "raw": 44,
+  "expected": 192
+ },
+ {
+  "subject": "biology",
+  "raw": 45,
+  "expected": 196
+ },
+ {
+  "subject": "biology",
+  "raw": 46,
+  "expected": 200
+ },
+ {
+  "subject": "biology",
+  "raw": 47,
+  "expected": 200
+ },
+ {
+  "subject": "biology",
+  "raw": 48,
+  "expected": 200
+ },
+ {
+  "subject": "biology",
+  "raw": 10.5,
+  "expected": 119
+ },
+ {
+  "subject": "physics",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "physics",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "physics",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "physics",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "physics",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "physics",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "physics",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "physics",
+  "raw": 6,
+  "expected": 109
+ },
+ {
+  "subject": "physics",
+  "raw": 7,
+  "expected": 118
+ },
+ {
+  "subject": "physics",
+  "raw": 8,
+  "expected": 125
+ },
+ {
+  "subject": "physics",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "physics",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "physics",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "physics",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "physics",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "physics",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "physics",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "physics",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "physics",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "physics",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "physics",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "physics",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "physics",
+  "raw": 21,
+  "expected": 156
+ },
+ {
+  "subject": "physics",
+  "raw": 22,
+  "expected": 160
+ },
+ {
+  "subject": "physics",
+  "raw": 23,
+  "expected": 164
+ },
+ {
+  "subject": "physics",
+  "raw": 24,
+  "expected": 166
+ },
+ {
+  "subject": "physics",
+  "raw": 25,
+  "expected": 169
+ },
+ {
+  "subject": "physics",
+  "raw": 26,
+  "expected": 173
+ },
+ {
+  "subject": "physics",
+  "raw": 27,
+  "expected": 176
+ },
+ {
+  "subject": "physics",
+  "raw": 28,
+  "expected": 179
+ },
+ {
+  "subject": "physics",
+  "raw": 29,
+  "expected": 184
+ },
+ {
+  "subject": "physics",
+  "raw": 30,
+  "expected": 189
+ },
+ {
+  "subject": "physics",
+  "raw": 31,
+  "expected": 194
+ },
+ {
+  "subject": "physics",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "physics",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "physics",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "physics",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "chemistry",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "chemistry",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "chemistry",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "chemistry",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "chemistry",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "chemistry",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "chemistry",
+  "raw": 5,
+  "expected": 100
+ },
+ {
+  "subject": "chemistry",
+  "raw": 6,
+  "expected": 109
+ },
+ {
+  "subject": "chemistry",
+  "raw": 7,
+  "expected": 118
+ },
+ {
+  "subject": "chemistry",
+  "raw": 8,
+  "expected": 125
+ },
+ {
+  "subject": "chemistry",
+  "raw": 9,
+  "expected": 131
+ },
+ {
+  "subject": "chemistry",
+  "raw": 10,
+  "expected": 134
+ },
+ {
+  "subject": "chemistry",
+  "raw": 11,
+  "expected": 137
+ },
+ {
+  "subject": "chemistry",
+  "raw": 12,
+  "expected": 140
+ },
+ {
+  "subject": "chemistry",
+  "raw": 13,
+  "expected": 143
+ },
+ {
+  "subject": "chemistry",
+  "raw": 14,
+  "expected": 145
+ },
+ {
+  "subject": "chemistry",
+  "raw": 15,
+  "expected": 147
+ },
+ {
+  "subject": "chemistry",
+  "raw": 16,
+  "expected": 148
+ },
+ {
+  "subject": "chemistry",
+  "raw": 17,
+  "expected": 149
+ },
+ {
+  "subject": "chemistry",
+  "raw": 18,
+  "expected": 150
+ },
+ {
+  "subject": "chemistry",
+  "raw": 19,
+  "expected": 151
+ },
+ {
+  "subject": "chemistry",
+  "raw": 20,
+  "expected": 152
+ },
+ {
+  "subject": "chemistry",
+  "raw": 21,
+  "expected": 156
+ },
+ {
+  "subject": "chemistry",
+  "raw": 22,
+  "expected": 160
+ },
+ {
+  "subject": "chemistry",
+  "raw": 23,
+  "expected": 164
+ },
+ {
+  "subject": "chemistry",
+  "raw": 24,
+  "expected": 166
+ },
+ {
+  "subject": "chemistry",
+  "raw": 25,
+  "expected": 169
+ },
+ {
+  "subject": "chemistry",
+  "raw": 26,
+  "expected": 173
+ },
+ {
+  "subject": "chemistry",
+  "raw": 27,
+  "expected": 176
+ },
+ {
+  "subject": "chemistry",
+  "raw": 28,
+  "expected": 179
+ },
+ {
+  "subject": "chemistry",
+  "raw": 29,
+  "expected": 184
+ },
+ {
+  "subject": "chemistry",
+  "raw": 30,
+  "expected": 189
+ },
+ {
+  "subject": "chemistry",
+  "raw": 31,
+  "expected": 194
+ },
+ {
+  "subject": "chemistry",
+  "raw": 32,
+  "expected": 200
+ },
+ {
+  "subject": "chemistry",
+  "raw": 33,
+  "expected": 200
+ },
+ {
+  "subject": "chemistry",
+  "raw": 34,
+  "expected": 200
+ },
+ {
+  "subject": "chemistry",
+  "raw": 10.5,
+  "expected": 134
+ },
+ {
+  "subject": "geography",
+  "raw": -1,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 0,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 1,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 2,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 3,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 4,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 5,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 6,
+  "expected": null
+ },
+ {
+  "subject": "geography",
+  "raw": 7,
+  "expected": 100
+ },
+ {
+  "subject": "geography",
+  "raw": 8,
+  "expected": 107
+ },
+ {
+  "subject": "geography",
+  "raw": 9,
+  "expected": 114
+ },
+ {
+  "subject": "geography",
+  "raw": 10,
+  "expected": 119
+ },
+ {
+  "subject": "geography",
+  "raw": 11,
+  "expected": 124
+ },
+ {
+  "subject": "geography",
+  "raw": 12,
+  "expected": 128
+ },
+ {
+  "subject": "geography",
+  "raw": 13,
+  "expected": 131
+ },
+ {
+  "subject": "geography",
+  "raw": 14,
+  "expected": 134
+ },
+ {
+  "subject": "geography",
+  "raw": 15,
+  "expected": 136
+ },
+ {
+  "subject": "geography",
+  "raw": 16,
+  "expected": 138
+ },
+ {
+  "subject": "geography",
+  "raw": 17,
+  "expected": 140
+ },
+ {
+  "subject": "geography",
+  "raw": 18,
+  "expected": 142
+ },
+ {
+  "subject": "geography",
+  "raw": 19,
+  "expected": 144
+ },
+ {
+  "subject": "geography",
+  "raw": 20,
+  "expected": 145
+ },
+ {
+  "subject": "geography",
+  "raw": 21,
+  "expected": 146
+ },
+ {
+  "subject": "geography",
+  "raw": 22,
+  "expected": 147
+ },
+ {
+  "subject": "geography",
+  "raw": 23,
+  "expected": 148
+ },
+ {
+  "subject": "geography",
+  "raw": 24,
+  "expected": 149
+ },
+ {
+  "subject": "geography",
+  "raw": 25,
+  "expected": 150
+ },
+ {
+  "subject": "geography",
+  "raw": 26,
+  "expected": 151
+ },
+ {
+  "subject": "geography",
+  "raw": 27,
+  "expected": 152
+ },
+ {
+  "subject": "geography",
+  "raw": 28,
+  "expected": 154
+ },
+ {
+  "subject": "geography",
+  "raw": 29,
+  "expected": 156
+ },
+ {
+  "subject": "geography",
+  "raw": 30,
+  "expected": 158
+ },
+ {
+  "subject": "geography",
+  "raw": 31,
+  "expected": 160
+ },
+ {
+  "subject": "geography",
+  "raw": 32,
+  "expected": 162
+ },
+ {
+  "subject": "geography",
+  "raw": 33,
+  "expected": 164
+ },
+ {
+  "subject": "geography",
+  "raw": 34,
+  "expected": 166
+ },
+ {
+  "subject": "geography",
+  "raw": 35,
+  "expected": 168
+ },
+ {
+  "subject": "geography",
+  "raw": 36,
+  "expected": 170
+ },
+ {
+  "subject": "geography",
+  "raw": 37,
+  "expected": 172
+ },
+ {
+  "subject": "geography",
+  "raw": 38,
+  "expected": 175
+ },
+ {
+  "subject": "geography",
+  "raw": 39,
+  "expected": 177
+ },
+ {
+  "subject": "geography",
+  "raw": 40,
+  "expected": 179
+ },
+ {
+  "subject": "geography",
+  "raw": 41,
+  "expected": 182
+ },
+ {
+  "subject": "geography",
+  "raw": 42,
+  "expected": 185
+ },
+ {
+  "subject": "geography",
+  "raw": 43,
+  "expected": 188
+ },
+ {
+  "subject": "geography",
+  "raw": 44,
+  "expected": 192
+ },
+ {
+  "subject": "geography",
+  "raw": 45,
+  "expected": 196
+ },
+ {
+  "subject": "geography",
+  "raw": 46,
+  "expected": 200
+ },
+ {
+  "subject": "geography",
+  "raw": 47,
+  "expected": 200
+ },
+ {
+  "subject": "geography",
+  "raw": 48,
+  "expected": 200
+ },
+ {
+  "subject": "geography",
+  "raw": 10.5,
+  "expected": 119
+ }
+]

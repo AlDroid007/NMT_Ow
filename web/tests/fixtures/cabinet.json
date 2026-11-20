@@ -1,0 +1,1348 @@
+{
+ "results": [
+  {
+   "finished_at": "2026-10-01T10:00:00",
+   "length_mode": "quick",
+   "tutor_mode": false,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 5,
+     "actual_max": 7,
+     "projected_raw": 33,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 164,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {}
+    },
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "earned": 2,
+     "actual_max": 6,
+     "projected_raw": 11,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 137,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Use of English: Граматика (Task 6)": 1,
+      "Use of English: Лексика (Task 5)": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "id": 1,
+   "created_at": "2026-10-01T10:00:00"
+  },
+  {
+   "finished_at": "2026-10-01T11:01:00",
+   "length_mode": "quick",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 6,
+     "actual_max": 7,
+     "projected_raw": 39,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 177,
+     "is_full": false,
+     "drills_done": 1,
+     "weak_sections": {}
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "earned": 3,
+     "actual_max": 11,
+     "projected_raw": 15,
+     "official_max": 54,
+     "threshold": 9,
+     "nmt_200": 130,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Україна в 1914–1945 рр.": 2,
+      "Друга половина XVI–XVIII ст.": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 1,
+   "id": 2,
+   "created_at": "2026-10-01T11:01:00"
+  },
+  {
+   "finished_at": "2026-10-01T12:02:00",
+   "length_mode": "medium",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 6,
+     "actual_max": 8,
+     "projected_raw": 34,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 166,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Клітина. Хімічний склад і реалізація спадкової інформації": 1,
+      "Біорізноманіття": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 2,
+   "id": 3,
+   "created_at": "2026-10-01T12:02:00"
+  },
+  {
+   "finished_at": "2026-10-02T13:03:00",
+   "length_mode": "full",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 6,
+     "actual_max": 9,
+     "projected_raw": 30,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 159,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Орфографія": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "id": 4,
+   "created_at": "2026-10-02T13:03:00"
+  },
+  {
+   "finished_at": "2026-10-04T14:04:00",
+   "length_mode": "medium",
+   "tutor_mode": false,
+   "mistake_drill": true,
+   "subjects": [
+    {
+     "subject": "math",
+     "name": "Математика",
+     "earned": 8,
+     "actual_max": 13,
+     "projected_raw": 20,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 152,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Рівняння, нерівності та їх системи": 1,
+      "Комбінаторика, ймовірність, статистика": 1,
+      "Числа і вирази": 1
+     }
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 7,
+     "actual_max": 11,
+     "projected_raw": 29,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 157,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Морфологія": 1,
+      "Орфографія": 1
+     }
+    },
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "earned": 5,
+     "actual_max": 8,
+     "projected_raw": 20,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 152,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Reading: Пошук інформації (Task 3)": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 4,
+   "id": 5,
+   "created_at": "2026-10-04T14:04:00"
+  },
+  {
+   "finished_at": "2026-10-04T15:05:00",
+   "length_mode": "full",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 2,
+     "actual_max": 4,
+     "projected_raw": 23,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 148,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Біорізноманіття": 1
+     }
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 3,
+     "actual_max": 9,
+     "projected_raw": 15,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 136,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Морфологія": 1,
+      "Лексикологія. Фразеологія": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 5,
+   "id": 6,
+   "created_at": "2026-10-04T15:05:00"
+  },
+  {
+   "finished_at": "2026-10-06T16:00:00",
+   "length_mode": "full",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "earned": 1,
+     "actual_max": 3,
+     "projected_raw": 11,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 137,
+     "is_full": false,
+     "drills_done": 1,
+     "weak_sections": {
+      "Use of English: Граматика (Task 6)": 1,
+      "Use of English: Лексика (Task 5)": 1
+     }
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "earned": 4,
+     "actual_max": 5,
+     "projected_raw": 43,
+     "official_max": 54,
+     "threshold": 9,
+     "nmt_200": 173,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Від найдавніших часів до першої половини XVI ст.": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "id": 7,
+   "created_at": "2026-10-06T16:00:00"
+  },
+  {
+   "finished_at": "2026-10-07T17:01:00",
+   "length_mode": "medium",
+   "tutor_mode": false,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 4,
+     "actual_max": 18,
+     "projected_raw": 10,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 110,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Лексикологія. Фразеологія": 2,
+      "Фонетика. Графіка. Орфоепія": 1
+     }
+    },
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 8,
+     "actual_max": 11,
+     "projected_raw": 33,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 164,
+     "is_full": false,
+     "drills_done": 1,
+     "weak_sections": {
+      "Організм людини як біологічна система": 1,
+      "Біорізноманіття": 1
+     }
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "earned": 15,
+     "actual_max": 22,
+     "projected_raw": 37,
+     "official_max": 54,
+     "threshold": 9,
+     "nmt_200": 163,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Друга половина XVI–XVIII ст.": 1,
+      "Від найдавніших часів до першої половини XVI ст.": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 7,
+   "id": 8,
+   "created_at": "2026-10-07T17:01:00"
+  },
+  {
+   "finished_at": "2026-10-07T18:02:00",
+   "length_mode": "full",
+   "tutor_mode": false,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 3,
+     "actual_max": 3,
+     "projected_raw": 46,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 200,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {}
+    },
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "earned": 6,
+     "actual_max": 7,
+     "projected_raw": 27,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 169,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Use of English: Граматика (Task 6)": 1
+     }
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 5,
+     "actual_max": 10,
+     "projected_raw": 22,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 146,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Орфографія": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 8,
+   "id": 9,
+   "created_at": "2026-10-07T18:02:00"
+  },
+  {
+   "finished_at": "2026-10-08T19:03:00",
+   "length_mode": "full",
+   "tutor_mode": true,
+   "mistake_drill": true,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 12,
+     "actual_max": 16,
+     "projected_raw": 34,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 166,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {}
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 1,
+     "actual_max": 3,
+     "projected_raw": 15,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": 136,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Лексикологія. Фразеологія": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "id": 10,
+   "created_at": "2026-10-08T19:03:00"
+  },
+  {
+   "finished_at": "2026-10-09T10:04:00",
+   "length_mode": "medium",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "earned": 1,
+     "actual_max": 3,
+     "projected_raw": 11,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 137,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Use of English: Граматика (Task 6)": 1
+     }
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "earned": 1,
+     "actual_max": 7,
+     "projected_raw": 6,
+     "official_max": 45,
+     "threshold": 8,
+     "nmt_200": null,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Фонетика. Графіка. Орфоепія": 2
+     }
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "earned": 7,
+     "actual_max": 14,
+     "projected_raw": 27,
+     "official_max": 54,
+     "threshold": 9,
+     "nmt_200": 147,
+     "is_full": false,
+     "drills_done": 1,
+     "weak_sections": {
+      "Україна в 1945 р. – початок XXI ст.": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 10,
+   "id": 11,
+   "created_at": "2026-10-09T10:04:00"
+  },
+  {
+   "finished_at": "2026-10-10T11:05:00",
+   "length_mode": "quick",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "math",
+     "name": "Математика",
+     "earned": 2,
+     "actual_max": 3,
+     "projected_raw": 21,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 155,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Планіметрія": 1
+     }
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "earned": 6,
+     "actual_max": 8,
+     "projected_raw": 40,
+     "official_max": 54,
+     "threshold": 9,
+     "nmt_200": 169,
+     "is_full": false,
+     "drills_done": 3,
+     "weak_sections": {
+      "Україна в 1914–1945 рр.": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "focus_section": "Планіметрія",
+   "report_id": 11,
+   "id": 12,
+   "created_at": "2026-10-10T11:05:00"
+  },
+  {
+   "finished_at": "2026-10-11T12:00:00",
+   "length_mode": "full",
+   "tutor_mode": true,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "earned": 14,
+     "actual_max": 16,
+     "projected_raw": 40,
+     "official_max": 46,
+     "threshold": 7,
+     "nmt_200": 179,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {}
+    },
+    {
+     "subject": "math",
+     "name": "Математика",
+     "earned": 9,
+     "actual_max": 12,
+     "projected_raw": 24,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 167,
+     "is_full": false,
+     "drills_done": 0,
+     "weak_sections": {
+      "Числа і вирази": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "id": 13,
+   "created_at": "2026-10-11T12:00:00"
+  },
+  {
+   "finished_at": "2026-10-11T13:01:00",
+   "length_mode": "quick",
+   "tutor_mode": false,
+   "mistake_drill": false,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "earned": 2,
+     "actual_max": 4,
+     "projected_raw": 16,
+     "official_max": 32,
+     "threshold": 5,
+     "nmt_200": 148,
+     "is_full": false,
+     "drills_done": 2,
+     "weak_sections": {
+      "Use of English: Граматика (Task 6)": 1
+     }
+    }
+   ],
+   "answers": [],
+   "hints": [],
+   "report_id": 13,
+   "id": 14,
+   "created_at": "2026-10-11T13:01:00"
+  }
+ ],
+ "profile": {
+  "targets": {
+   "math": 180,
+   "ukrmova": 150
+  },
+  "subjects": [
+   "ukrmova",
+   "math",
+   "history"
+  ]
+ },
+ "subject_stats": {
+  "biology": {
+   "subject": "biology",
+   "name": "Біологія",
+   "sessions": 6,
+   "failed": 0,
+   "avg": 170,
+   "best": 200,
+   "last": 179,
+   "recent": 181,
+   "trend": 22,
+   "accuracy": 78,
+   "drills_done": 10,
+   "target": null,
+   "gap": null,
+   "last_at": "2026-10-11T12:00:00"
+  },
+  "english": {
+   "subject": "english",
+   "name": "Англійська мова",
+   "sessions": 5,
+   "failed": 0,
+   "avg": 146,
+   "best": 169,
+   "last": 148,
+   "recent": 151,
+   "trend": 14,
+   "accuracy": 52,
+   "drills_done": 14,
+   "target": null,
+   "gap": null,
+   "last_at": "2026-10-11T13:01:00"
+  },
+  "history": {
+   "subject": "history",
+   "name": "Історія України",
+   "sessions": 5,
+   "failed": 0,
+   "avg": 156,
+   "best": 173,
+   "last": 169,
+   "recent": 160,
+   "trend": 8,
+   "accuracy": 58,
+   "drills_done": 6,
+   "target": null,
+   "gap": null,
+   "last_at": "2026-10-10T11:05:00"
+  },
+  "math": {
+   "subject": "math",
+   "name": "Математика",
+   "sessions": 2,
+   "failed": 0,
+   "avg": 161,
+   "best": 167,
+   "last": 167,
+   "recent": 161,
+   "trend": null,
+   "accuracy": 73,
+   "drills_done": 2,
+   "target": 180,
+   "gap": 19,
+   "last_at": "2026-10-11T12:00:00"
+  },
+  "ukrmova": {
+   "subject": "ukrmova",
+   "name": "Українська мова",
+   "sessions": 6,
+   "failed": 1,
+   "avg": 146,
+   "best": 177,
+   "last": null,
+   "recent": 128,
+   "trend": -29,
+   "accuracy": 42,
+   "drills_done": 13,
+   "target": 150,
+   "gap": 22,
+   "last_at": "2026-10-09T10:04:00"
+  }
+ },
+ "cabinet_subjects": [
+  "ukrmova",
+  "math",
+  "history",
+  "english",
+  "biology"
+ ],
+ "progress_series": {
+  "biology": [
+   {
+    "at": "2026-10-01T10:00:00",
+    "nmt_200": 164,
+    "accuracy": 71
+   },
+   {
+    "at": "2026-10-01T12:02:00",
+    "nmt_200": 166,
+    "accuracy": 75
+   },
+   {
+    "at": "2026-10-04T15:05:00",
+    "nmt_200": 148,
+    "accuracy": 50
+   },
+   {
+    "at": "2026-10-07T17:01:00",
+    "nmt_200": 164,
+    "accuracy": 73
+   },
+   {
+    "at": "2026-10-07T18:02:00",
+    "nmt_200": 200,
+    "accuracy": 100
+   },
+   {
+    "at": "2026-10-11T12:00:00",
+    "nmt_200": 179,
+    "accuracy": 88
+   }
+  ],
+  "english": [
+   {
+    "at": "2026-10-01T10:00:00",
+    "nmt_200": 137,
+    "accuracy": 33
+   },
+   {
+    "at": "2026-10-06T16:00:00",
+    "nmt_200": 137,
+    "accuracy": 33
+   },
+   {
+    "at": "2026-10-07T18:02:00",
+    "nmt_200": 169,
+    "accuracy": 86
+   },
+   {
+    "at": "2026-10-09T10:04:00",
+    "nmt_200": 137,
+    "accuracy": 33
+   },
+   {
+    "at": "2026-10-11T13:01:00",
+    "nmt_200": 148,
+    "accuracy": 50
+   }
+  ],
+  "history": [
+   {
+    "at": "2026-10-01T11:01:00",
+    "nmt_200": 130,
+    "accuracy": 27
+   },
+   {
+    "at": "2026-10-06T16:00:00",
+    "nmt_200": 173,
+    "accuracy": 80
+   },
+   {
+    "at": "2026-10-07T17:01:00",
+    "nmt_200": 163,
+    "accuracy": 68
+   },
+   {
+    "at": "2026-10-09T10:04:00",
+    "nmt_200": 147,
+    "accuracy": 50
+   },
+   {
+    "at": "2026-10-10T11:05:00",
+    "nmt_200": 169,
+    "accuracy": 75
+   }
+  ],
+  "math": [
+   {
+    "at": "2026-10-10T11:05:00",
+    "nmt_200": 155,
+    "accuracy": 67
+   },
+   {
+    "at": "2026-10-11T12:00:00",
+    "nmt_200": 167,
+    "accuracy": 75
+   }
+  ],
+  "ukrmova": [
+   {
+    "at": "2026-10-01T11:01:00",
+    "nmt_200": 177,
+    "accuracy": 86
+   },
+   {
+    "at": "2026-10-02T13:03:00",
+    "nmt_200": 159,
+    "accuracy": 67
+   },
+   {
+    "at": "2026-10-04T15:05:00",
+    "nmt_200": 136,
+    "accuracy": 33
+   },
+   {
+    "at": "2026-10-07T17:01:00",
+    "nmt_200": 110,
+    "accuracy": 22
+   },
+   {
+    "at": "2026-10-07T18:02:00",
+    "nmt_200": 146,
+    "accuracy": 50
+   },
+   {
+    "at": "2026-10-09T10:04:00",
+    "nmt_200": null,
+    "accuracy": 14
+   }
+  ]
+ },
+ "weak_topics": [
+  {
+   "subject": "english",
+   "subject_name": "Англійська мова",
+   "section": "Use of English: Граматика (Task 6)",
+   "mistakes": 5,
+   "score": 3.63
+  },
+  {
+   "subject": "ukrmova",
+   "subject_name": "Українська мова",
+   "section": "Фонетика. Графіка. Орфоепія",
+   "mistakes": 3,
+   "score": 2.61
+  },
+  {
+   "subject": "ukrmova",
+   "subject_name": "Українська мова",
+   "section": "Лексикологія. Фразеологія",
+   "mistakes": 4,
+   "score": 2.6
+  },
+  {
+   "subject": "history",
+   "subject_name": "Історія України",
+   "section": "Україна в 1914–1945 рр.",
+   "mistakes": 3,
+   "score": 2.04
+  },
+  {
+   "subject": "math",
+   "subject_name": "Математика",
+   "section": "Числа і вирази",
+   "mistakes": 2,
+   "score": 1.72
+  },
+  {
+   "subject": "biology",
+   "subject_name": "Біологія",
+   "section": "Біорізноманіття",
+   "mistakes": 3,
+   "score": 1.58
+  },
+  {
+   "subject": "ukrmova",
+   "subject_name": "Українська мова",
+   "section": "Орфографія",
+   "mistakes": 3,
+   "score": 1.54
+  },
+  {
+   "subject": "history",
+   "subject_name": "Історія України",
+   "section": "Від найдавніших часів до першої половини XVI ст.",
+   "mistakes": 2,
+   "score": 1.34
+  }
+ ],
+ "weak_topics_math": [
+  {
+   "subject": "math",
+   "subject_name": "Математика",
+   "section": "Числа і вирази",
+   "mistakes": 2,
+   "score": 1.72
+  },
+  {
+   "subject": "math",
+   "subject_name": "Математика",
+   "section": "Планіметрія",
+   "mistakes": 1,
+   "score": 0.85
+  },
+  {
+   "subject": "math",
+   "subject_name": "Математика",
+   "section": "Комбінаторика, ймовірність, статистика",
+   "mistakes": 1,
+   "score": 0.72
+  }
+ ],
+ "history": [
+  {
+   "id": 14,
+   "at": "2026-10-11T13:01:00",
+   "mode": "exam",
+   "title": "Режим іспиту",
+   "report_id": 13,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 148,
+     "earned": 2,
+     "actual_max": 4
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "at": "2026-10-11T12:00:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": null,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 179,
+     "earned": 14,
+     "actual_max": 16
+    },
+    {
+     "subject": "math",
+     "name": "Математика",
+     "nmt_200": 167,
+     "earned": 9,
+     "actual_max": 12
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "at": "2026-10-10T11:05:00",
+   "mode": "focus",
+   "title": "Тема: Планіметрія",
+   "report_id": 11,
+   "subjects": [
+    {
+     "subject": "math",
+     "name": "Математика",
+     "nmt_200": 155,
+     "earned": 2,
+     "actual_max": 3
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "nmt_200": 169,
+     "earned": 6,
+     "actual_max": 8
+    }
+   ]
+  },
+  {
+   "id": 11,
+   "at": "2026-10-09T10:04:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": 10,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 137,
+     "earned": 1,
+     "actual_max": 3
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": null,
+     "earned": 1,
+     "actual_max": 7
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "nmt_200": 147,
+     "earned": 7,
+     "actual_max": 14
+    }
+   ]
+  },
+  {
+   "id": 10,
+   "at": "2026-10-08T19:03:00",
+   "mode": "drill",
+   "title": "Робота над помилками",
+   "report_id": null,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 166,
+     "earned": 12,
+     "actual_max": 16
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 136,
+     "earned": 1,
+     "actual_max": 3
+    }
+   ]
+  },
+  {
+   "id": 9,
+   "at": "2026-10-07T18:02:00",
+   "mode": "exam",
+   "title": "Режим іспиту",
+   "report_id": 8,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 200,
+     "earned": 3,
+     "actual_max": 3
+    },
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 169,
+     "earned": 6,
+     "actual_max": 7
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 146,
+     "earned": 5,
+     "actual_max": 10
+    }
+   ]
+  },
+  {
+   "id": 8,
+   "at": "2026-10-07T17:01:00",
+   "mode": "exam",
+   "title": "Режим іспиту",
+   "report_id": 7,
+   "subjects": [
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 110,
+     "earned": 4,
+     "actual_max": 18
+    },
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 164,
+     "earned": 8,
+     "actual_max": 11
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "nmt_200": 163,
+     "earned": 15,
+     "actual_max": 22
+    }
+   ]
+  },
+  {
+   "id": 7,
+   "at": "2026-10-06T16:00:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": null,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 137,
+     "earned": 1,
+     "actual_max": 3
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "nmt_200": 173,
+     "earned": 4,
+     "actual_max": 5
+    }
+   ]
+  },
+  {
+   "id": 6,
+   "at": "2026-10-04T15:05:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": 5,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 148,
+     "earned": 2,
+     "actual_max": 4
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 136,
+     "earned": 3,
+     "actual_max": 9
+    }
+   ]
+  },
+  {
+   "id": 5,
+   "at": "2026-10-04T14:04:00",
+   "mode": "drill",
+   "title": "Робота над помилками",
+   "report_id": 4,
+   "subjects": [
+    {
+     "subject": "math",
+     "name": "Математика",
+     "nmt_200": 152,
+     "earned": 8,
+     "actual_max": 13
+    },
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 157,
+     "earned": 7,
+     "actual_max": 11
+    },
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 152,
+     "earned": 5,
+     "actual_max": 8
+    }
+   ]
+  },
+  {
+   "id": 4,
+   "at": "2026-10-02T13:03:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": null,
+   "subjects": [
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 159,
+     "earned": 6,
+     "actual_max": 9
+    }
+   ]
+  },
+  {
+   "id": 3,
+   "at": "2026-10-01T12:02:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": 2,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 166,
+     "earned": 6,
+     "actual_max": 8
+    }
+   ]
+  },
+  {
+   "id": 2,
+   "at": "2026-10-01T11:01:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": 1,
+   "subjects": [
+    {
+     "subject": "ukrmova",
+     "name": "Українська мова",
+     "nmt_200": 177,
+     "earned": 6,
+     "actual_max": 7
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "nmt_200": 130,
+     "earned": 3,
+     "actual_max": 11
+    }
+   ]
+  },
+  {
+   "id": 1,
+   "at": "2026-10-01T10:00:00",
+   "mode": "exam",
+   "title": "Режим іспиту",
+   "report_id": null,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 164,
+     "earned": 5,
+     "actual_max": 7
+    },
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 137,
+     "earned": 2,
+     "actual_max": 6
+    }
+   ]
+  }
+ ],
+ "history_3": [
+  {
+   "id": 14,
+   "at": "2026-10-11T13:01:00",
+   "mode": "exam",
+   "title": "Режим іспиту",
+   "report_id": 13,
+   "subjects": [
+    {
+     "subject": "english",
+     "name": "Англійська мова",
+     "nmt_200": 148,
+     "earned": 2,
+     "actual_max": 4
+    }
+   ]
+  },
+  {
+   "id": 13,
+   "at": "2026-10-11T12:00:00",
+   "mode": "tutor",
+   "title": "Із Совою",
+   "report_id": null,
+   "subjects": [
+    {
+     "subject": "biology",
+     "name": "Біологія",
+     "nmt_200": 179,
+     "earned": 14,
+     "actual_max": 16
+    },
+    {
+     "subject": "math",
+     "name": "Математика",
+     "nmt_200": 167,
+     "earned": 9,
+     "actual_max": 12
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "at": "2026-10-10T11:05:00",
+   "mode": "focus",
+   "title": "Тема: Планіметрія",
+   "report_id": 11,
+   "subjects": [
+    {
+     "subject": "math",
+     "name": "Математика",
+     "nmt_200": 155,
+     "earned": 2,
+     "actual_max": 3
+    },
+    {
+     "subject": "history",
+     "name": "Історія України",
+     "nmt_200": 169,
+     "earned": 6,
+     "actual_max": 8
+    }
+   ]
+  }
+ ],
+ "session_modes": [
+  "exam",
+  "tutor",
+  "tutor",
+  "tutor",
+  "drill",
+  "tutor",
+  "tutor",
+  "exam",
+  "exam",
+  "drill",
+  "tutor",
+  "focus",
+  "tutor",
+  "exam"
+ ],
+ "format_when": {
+  "2026-10-01T10:05:00": "01.10.2026 10:05",
+  "": "",
+  "bad": "bad",
+  "2026-01-31T23:59:59": "31.01.2026 23:59"
+ }
+}
