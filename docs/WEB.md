@@ -46,6 +46,47 @@ web/
 сверяют ответы TypeScript-логики с Python на одних и тех же заданиях. Когда веб покроет всё, десктоп
 уйдёт в архивную ветку (ROADMAP, этап 8).
 
-## Запуск, тесты, деплой
+## Запуск и тесты
 
-Будет дописано вместе с каркасом `web/`: `npm install`, `npm run dev`, `npm test`, настройка Cloudflare Pages.
+Нужен Node.js 22 (`node -v`).
+
+```bash
+cd web
+npm install          # один раз
+npm run dev          # http://localhost:5173 — открывается и с телефона в той же сети: npm run dev -- --host
+npm test             # vitest
+npm run build        # проверка типов + сборка в web/dist
+```
+
+Адрес Supabase и публичный ключ лежат в `web/src/config.ts` (те же, что в `nmt_tutor/cloud_config.json`);
+их можно переопределить переменными `VITE_SUPABASE_URL` и `VITE_SUPABASE_KEY`.
+
+## Деплой на Cloudflare Pages (один раз)
+
+1. Зарегистрируйся на https://dash.cloudflare.com (бесплатно).
+2. **Workers & Pages → Create → Pages → Connect to Git** → GitHub → репозиторий `AlDroid007/NMT_Ow`.
+3. Настройки сборки:
+
+   | Поле | Значение |
+   |---|---|
+   | Project name | `nmt-sova` (будет адрес `nmt-sova.pages.dev`) |
+   | Production branch | `main` |
+   | Framework preset | `Vue` (или None) |
+   | Root directory | `web` |
+   | Build command | `npm run build` |
+   | Build output directory | `dist` |
+   | Environment variable | `NODE_VERSION` = `22` |
+
+4. **Save and Deploy.** Дальше Cloudflare сам собирает сайт при каждом пуше:
+   - `main` → основной адрес `https://nmt-sova.pages.dev`;
+   - любая другая ветка → превью `https://<ветка>.nmt-sova.pages.dev` (например, `feature-web-app.nmt-sova.pages.dev`) —
+     так проверяем работу до мержа, в том числе на iPhone.
+5. Свой домен — позже: **Custom domains** в проекте Pages.
+
+Неизвестные адреса (например, `/cabinet` при обновлении страницы) Cloudflare отдаёт как `index.html`
+(режим SPA), поэтому роутер работает без дополнительных настроек.
+
+### Supabase для веба
+- **Authentication → URL Configuration → Site URL**: `https://nmt-sova.pages.dev`. Вход по 6-значному коду
+  не использует ссылки-редиректы, но Site URL лучше выставить.
+- CORS настраивать не нужно: Supabase принимает запросы с любого сайта, доступ решают правила RLS.

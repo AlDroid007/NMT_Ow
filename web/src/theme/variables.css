@@ -1,0 +1,56 @@
+/* Colours of the desktop app (nmt_tutor/ui_tk/theme.py, PALETTE) mapped onto Ionic variables. */
+:root {
+  --nmt-bg: #F3F5FC;
+  --nmt-card: #FFFFFF;
+  --nmt-card-soft: #F8FAFF;
+  --nmt-nav: #262F4D;
+  --nmt-nav-accent: #344068;
+  --nmt-text: #1E293B;
+  --nmt-muted: #64748B;
+  --nmt-border: #DCE2F2;
+  --nmt-soft-indigo: #EEF1FF;
+  --nmt-soft-indigo-bd: #C7D2FE;
+  --nmt-soft-mint: #ECFCF6;
+  --nmt-soft-mint-bd: #6EE7B7;
+  --nmt-soft-amber: #FFF9E6;
+  --nmt-soft-amber-bd: #FCD34D;
+  --nmt-soft-rose: #FFF1F2;
+  --nmt-soft-rose-bd: #FECDD3;
+  --nmt-ok-bg: #DCFCE7;
+  --nmt-ok-fg: #15803D;
+  --nmt-err-bg: #FEE2E2;
+  --nmt-err-fg: #B91C1C;
+  --nmt-chip-req-bg: #EDE9FE;
+  --nmt-chip-req-fg: #5B21B6;
+  --nmt-chip-opt-bg: #E0F2FE;
+  --nmt-chip-opt-fg: #0369A1;
+
+  --ion-color-primary: #5B6EF5;
+  --ion-color-primary-rgb: 91, 110, 245;
+  --ion-color-primary-contrast: #FFFFFF;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #485BE2;
+  --ion-color-primary-tint: #6B7DF6;
+
+  --ion-color-secondary: #22A094;
+  --ion-color-secondary-rgb: 34, 160, 148;
+  --ion-color-secondary-contrast: #FFFFFF;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
+  --ion-color-secondary-shade: #19877C;
+  --ion-color-secondary-tint: #38AA9F;
+
+  --ion-background-color: var(--nmt-bg);
+  --ion-text-color: var(--nmt-text);
+  --ion-toolbar-background: var(--nmt-nav);
+  --ion-toolbar-color: #FFFFFF;
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+.nmt-card {
+  background: var(--nmt-card);
+  border: 1px solid var(--nmt-border);
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(38, 47, 77, 0.06);
+}
+.nmt-muted { color: var(--nmt-muted); }
