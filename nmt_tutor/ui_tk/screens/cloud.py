@@ -10,12 +10,14 @@ import sys
 import threading
 import tkinter as tk
 import uuid
+import webbrowser
 from datetime import datetime
 from tkinter import messagebox
 
 from ...cloud import load_settings, sync
 from ...cloud.http import CloudError, NetworkError
 from ...cloud.supabase import AuthExpiredError, SupabaseClient, normalize_email
+from ...config import PRIVACY_URL
 from ...profiles import PROVIDER_CLOUD
 from ..owl import OwlMascot
 from ..theme import PALETTE
@@ -73,7 +75,7 @@ class CloudMixin:
         win.resizable(False, False)
         win.transient(self.root)
         card = RoundedCard(win, bg=PALETTE["card"], border=PALETTE["border"], parent_bg=PALETTE["bg"], radius=18, pad=18,
-                           width=440, height=360)
+                           width=440, height=392)
         card.pack(padx=14, pady=14)
         inner = card.inner
         OwlMascot(inner, size=56, bg=PALETTE["card"]).pack()
@@ -91,6 +93,19 @@ class CloudMixin:
         status = tk.Label(inner, text="", font=self.fonts["small"], bg=PALETTE["card"], fg=PALETTE["err_fg"],
                           wraplength=380, justify="center")
         status.pack(pady=(6, 2))
+
+        # Consent: the code is sent only after the student accepts the privacy policy.
+        agree = tk.BooleanVar(value=False)
+        consent = tk.Frame(inner, bg=PALETTE["card"])
+        consent.pack(pady=(0, 4))
+        tk.Checkbutton(consent, variable=agree, text="Я погоджуюсь з", font=self.fonts["small"], bg=PALETTE["card"],
+                       fg=PALETTE["text"], activebackground=PALETTE["card"], selectcolor=PALETTE["card"],
+                       highlightthickness=0, bd=0).pack(side="left")
+        policy = tk.Label(consent, text="Політикою конфіденційності", font=self.fonts["small"], bg=PALETTE["card"],
+                          fg=PALETTE["primary"], cursor="hand2")
+        policy.pack(side="left")
+        policy.bind("<Button-1>", lambda _e: self.open_privacy_policy())
+        win._privacy_var = agree  # tests tick it
 
         row = tk.Frame(inner, bg=PALETTE["card"])
         row.pack(fill="x", side="bottom")
@@ -119,6 +134,7 @@ class CloudMixin:
             var.set("")
             hint.config(text=f"Ми надіслали код на {state['email']}.\nВведи цифри з листа (перевір і «Спам»).")
             main_btn.set_text("Підтвердити")
+            consent.pack_forget()
             back.config(text="← Інша пошта")
             set_busy(False)
             entry.focus_set()
@@ -130,6 +146,7 @@ class CloudMixin:
             var.set(state["email"])
             hint.config(text=intro)
             main_btn.set_text("Надіслати код")
+            consent.pack(pady=(0, 4), after=status)
             back.config(text="")
             set_busy(False)
             entry.focus_set()
@@ -146,6 +163,10 @@ class CloudMixin:
                     email = normalize_email(var.get())
                 except CloudError as exc:
                     status.config(text=str(exc), fg=PALETTE["err_fg"])
+                    return
+                if not agree.get():
+                    status.config(text="Щоб увімкнути хмару, познач згоду з Політикою конфіденційності.",
+                                  fg=PALETTE["err_fg"])
                     return
                 state["email"] = email
                 set_busy(True, "Надсилаємо код…")
@@ -175,6 +196,13 @@ class CloudMixin:
         entry.focus_set()
         self._cloud_dialog = win
         return win
+
+    def open_privacy_policy(self):
+        """Opens the privacy policy in the browser (menu «Довідка» and the sign-in dialog)."""
+        try:
+            webbrowser.open(PRIVACY_URL)
+        except Exception:
+            messagebox.showinfo("Політика конфіденційності", PRIVACY_URL)
 
     # --- link the active profile ----------------------------------------------------------
     def cloud_connect(self):

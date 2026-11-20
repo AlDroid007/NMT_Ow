@@ -149,6 +149,7 @@ class NmtTutorApp(ProfilesScreenMixin, CabinetScreenMixin, CloudMixin, SetupScre
 
             help_menu = tk.Menu(menubar, tearoff=0)
             help_menu.add_command(label="Про програму «НМТ Сова-Репетитор»", command=self._show_about_dialog)
+            help_menu.add_command(label="Політика конфіденційності", command=self.open_privacy_policy)
             menubar.add_cascade(label="Довідка", menu=help_menu)
 
             old = getattr(self, "_menubar", None)
