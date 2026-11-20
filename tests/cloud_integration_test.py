@@ -224,6 +224,25 @@ def expect_denied(status, what):
     assert status in (401, 403, 404, 400) or status >= 400, f"{what}: got {status}"
 
 
+def check_access_gate(base):
+    """The web app's closed access: login + password -> device token (supabase/migrations/*_access_gate.sql)."""
+    psql("select public.set_gate_login('Tester', 'secret123')")
+    status, _ = raw(base, "GET", "app_gate_logins?select=login")
+    assert status >= 400 or _ == [], f"anon read gate logins: {status} {_}"
+    status, _ = raw(base, "POST", "rpc/set_gate_login", body={"p_login": "x", "p_password": "yyyyyy"})
+    expect_denied(status, "anon set_gate_login")
+    status, tok = raw(base, "POST", "rpc/gate_sign_in", body={"p_login": "tester", "p_password": "wrong"})
+    assert status == 200 and tok is None, (status, tok)
+    status, tok = raw(base, "POST", "rpc/gate_sign_in", body={"p_login": " TESTER", "p_password": "secret123"})
+    assert status == 200 and tok, (status, tok)
+    assert raw(base, "POST", "rpc/gate_check", body={"p_token": tok}) == (200, True)
+    assert raw(base, "POST", "rpc/gate_check", body={"p_token": str(uuid.uuid4())}) == (200, False)
+    psql("update public.app_gate_logins set enabled = false where login = 'tester'")
+    assert raw(base, "POST", "rpc/gate_check", body={"p_token": tok}) == (200, False)
+    psql("delete from public.app_gate_logins")
+    print("OK    access gate")
+
+
 def run_checks(base):
     from datetime import datetime
 
@@ -419,6 +438,7 @@ def main():
     server = http.server.ThreadingHTTPServer(("127.0.0.1", gw_port), Gateway)
     threading.Thread(target=server.serve_forever, daemon=True).start()
     try:
+        check_access_gate(f"http://127.0.0.1:{gw_port}")
         run_checks(f"http://127.0.0.1:{gw_port}")
         print("CLOUD INTEGRATION PASSED")
         return 0

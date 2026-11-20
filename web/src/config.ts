@@ -7,3 +7,5 @@ export const SUPABASE_KEY: string =
 export const PRIVACY_URL = 'https://aldroid007.github.io/NMT_Ow/privacy/'
 export const APP_TITLE = 'НМТ Сова-Репетитор'
 export const APP_VERSION = '4.0 (web)'
+/** Closed access (login + password before everything). VITE_ACCESS_GATE=off turns it off for local work. */
+export const ACCESS_GATE: boolean = (import.meta.env.VITE_ACCESS_GATE ?? 'on') !== 'off'

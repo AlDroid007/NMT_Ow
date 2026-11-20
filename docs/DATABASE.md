@@ -119,6 +119,12 @@ PK (`session_id`, `subject`, `question_no`):
 Ключ → JSON: `day_timezone` (`Europe/Kyiv` — для серии дней и дневного лимита), `free_daily_sessions`
 (null — без лимита), `free_subjects` (null — все бесплатные). Меняются в панели Supabase без обновления приложения.
 
+### Закрытый доступ к вебу
+Миграция `20261120000000_access_gate.sql`. Без политик RLS — через API таблицы не читаются.
+- `app_gate_logins` — `login` (нижний регистр), `password_hash` (bcrypt, pgcrypto), `enabled`, `note`.
+- `app_gate_tokens` — токен на каждое устройство, прошедшее вход; удаляются вместе с логином.
+- `app_gate_failures` — неверные пароли (для блокировки перебора), хранятся сутки.
+
 ## Серверные функции (API приложения)
 
 | функция | что делает |
@@ -127,6 +133,9 @@ PK (`session_id`, `subject`, `question_no`):
 | `submit_session(json)` | конец тренировки одним вызовом: итоги, ответы, подсказки → одна транзакция + пересчёт `profile_subject_stats` + серия дней. Тренировку без старта (старая история) создаёт с `imported = true`. Повтор безопасен |
 | `recalc_stats(profile?)` | полный пересчёт накоплений (админ — любой/всех, ученик — свой) |
 | `delete_my_account()` | удаляет аккаунт и всё его (требование App Store) |
+| `gate_sign_in(login, password)` | закрытый доступ к вебу: верная пара → новый токен устройства, иначе null; после 10 ошибок за 15 минут — `too many attempts`. Доступно и без входа |
+| `gate_check(token)` | токен ещё действует (логин есть и включён)? |
+| `set_gate_login(login, password, note?)` | только из SQL Editor: добавить логин или сменить пароль |
 
 Внутренние: `recalc_subject_stats`, `update_streak`, `is_admin`, `setting` — через API не вызываются.
 

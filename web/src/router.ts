@@ -5,6 +5,7 @@ import { useTrainingStore } from './stores/training'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', redirect: '/cabinet' },
+  { path: '/access', component: () => import('./views/AccessView.vue'), meta: { gate: true } },
   { path: '/signin', component: () => import('./views/SignInView.vue'), meta: { public: true } },
   { path: '/about', component: () => import('./views/AboutView.vue'), meta: { public: true } },
   { path: '/profile', component: () => import('./views/ProfileView.vue'), meta: { noProfile: true } },
@@ -32,6 +33,10 @@ router.beforeEach(async (to, from) => {
     training.stopTimer()
     training.$reset()
   }
+
+  // Closed access first: nothing else opens until the login and password are accepted.
+  if (!app.gateOpen) return to.meta.gate ? true : { path: '/access', query: to.fullPath !== '/' ? { next: to.fullPath } : {} }
+  if (to.meta.gate) return '/'
 
   if (to.path === '/signin' && app.signedIn) return '/cabinet'
   if (to.meta.public) return true

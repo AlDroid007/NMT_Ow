@@ -2,12 +2,15 @@
 
 import { defineStore } from 'pinia'
 import * as api from '../cloud/api'
+import { gateCheck } from '../cloud/gate'
 import type { Profile } from '../core/profiles'
 import type { SessionResult } from '../core/types'
 
 export const useAppStore = defineStore('app', {
   state: () => ({
     ready: false,
+    /** passed the closed-access login on this device */
+    gateOpen: false,
     email: null as string | null,
     userId: null as string | null,
     profile: null as Profile | null,
@@ -24,6 +27,7 @@ export const useAppStore = defineStore('app', {
     /** Restores the browser's sign-in session and the profile (once, before the first screen). */
     async init() {
       if (this.ready) return
+      this.gateOpen = await gateCheck()
       try {
         const session = await api.currentSession()
         if (session) await this.afterSignIn(session.user.id, session.user.email ?? null)
@@ -69,14 +73,18 @@ export const useAppStore = defineStore('app', {
 
     async signOut() {
       await api.signOut()
+      const gate = this.gateOpen  // the device stays let in; only the account changes
       this.$reset()
       this.ready = true
+      this.gateOpen = gate
     },
 
     async deleteAccount() {
       await api.deleteAccount()
+      const gate = this.gateOpen  // the device stays let in; only the account changes
       this.$reset()
       this.ready = true
+      this.gateOpen = gate
     },
   },
 })
